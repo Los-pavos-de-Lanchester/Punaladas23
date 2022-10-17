@@ -56,6 +56,7 @@
             this.btEncriptar.TabIndex = 2;
             this.btEncriptar.Text = "Encriptar";
             this.btEncriptar.UseVisualStyleBackColor = true;
+            this.btEncriptar.Click += new System.EventHandler(this.btEncriptar_Click);
             // 
             // cbListaMetodos
             // 

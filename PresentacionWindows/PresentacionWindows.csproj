@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Mensaje\DominioMensaje.csproj">
+      <Project>{c8893141-a4e5-48a6-b89e-d5d6a1887edd}</Project>
+      <Name>DominioMensaje</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
