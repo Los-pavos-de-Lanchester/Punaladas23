@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsolaPresentacion
+
+using ModeloDominio;
+
+namespace AlgoritmoEncriptacion
 {
-    internal class Program
+    public interface Algoritmo
     {
-        static void Main(string[] args)
-        {
-        }
+        Mensaje encriptar(Mensaje mensaje);
     }
 }

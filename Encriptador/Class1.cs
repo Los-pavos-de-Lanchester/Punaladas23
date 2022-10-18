@@ -1,28 +1,29 @@
-﻿using CifradoCesar;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using DominioMensaje;
-using CifradoCesar;
+using ModeloDominio;
+using AlgoritmoEncriptacion;
 
 namespace Encriptador
 {
     public class CEncriptador
     {
         Mensaje texto;
+        Algoritmo algoritmoActual;
 
-        Mensaje Texto { get { return texto; } set { texto = value; } }
+        public Mensaje Texto { get { return texto; } set { texto = value; } }
 
-        public CEncriptador(Mensaje texto) { this.texto = texto; }
+        public Algoritmo AlgoritmoActual { get { return algoritmoActual; } set { this.algoritmoActual = value; } }
+
+        public CEncriptador(Mensaje texto) { this.texto = texto; algoritmoActual = null; }
 
 
-
-        public char[] cifradoCesar()
+        public Mensaje cifrar()
         {
-            return AlgoritmoCifradoCesar.encriptarCesar(texto.textoC(), 5);
+            return this.algoritmoActual.encriptar(this.texto);
         }
 
     }

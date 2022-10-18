@@ -80,13 +80,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Algoritmo\AlgoritmoEncriptacion.csproj">
+      <Project>{a4da49ab-0694-43af-9ee6-4cd3b6b098d6}</Project>
+      <Name>AlgoritmoEncriptacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CifradoCesar\CifradoCesar.csproj">
+      <Project>{1a6c1bb3-c038-47a3-94fd-2d7a0df5a0c2}</Project>
+      <Name>CifradoCesar</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Encriptador\Encriptador.csproj">
       <Project>{3925ffae-a966-4c58-a78a-7999234386bc}</Project>
       <Name>Encriptador</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mensaje\DominioMensaje.csproj">
+    <ProjectReference Include="..\Mensaje\ModeloDominio.csproj">
       <Project>{c8893141-a4e5-48a6-b89e-d5d6a1887edd}</Project>
-      <Name>DominioMensaje</Name>
+      <Name>ModeloDominio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

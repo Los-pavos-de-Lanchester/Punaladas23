@@ -5,13 +5,15 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescifradoCesar", "DescifradoCesar\DescifradoCesar.csproj", "{B3602A5B-3EB3-4B4A-B76F-1C3E7BD6F226}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DominioMensaje", "Mensaje\DominioMensaje.csproj", "{C8893141-A4E5-48A6-B89E-D5D6A1887EDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDominio", "Mensaje\ModeloDominio.csproj", "{C8893141-A4E5-48A6-B89E-D5D6A1887EDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentacionWindows", "PresentacionWindows\PresentacionWindows.csproj", "{4B2E5F1B-B768-4686-A0FA-C80370AF6D76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CifradoCesar", "CifradoCesar\CifradoCesar.csproj", "{1A6C1BB3-C038-47A3-94FD-2D7A0DF5A0C2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encriptador", "Encriptador\Encriptador.csproj", "{3925FFAE-A966-4C58-A78A-7999234386BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoritmoEncriptacion", "Algoritmo\AlgoritmoEncriptacion.csproj", "{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{3925FFAE-A966-4C58-A78A-7999234386BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3925FFAE-A966-4C58-A78A-7999234386BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3925FFAE-A966-4C58-A78A-7999234386BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

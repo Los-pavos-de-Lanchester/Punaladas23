@@ -8,8 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using DominioMensaje;
+using ModeloDominio;
 using Encriptador;
+using CifradoCesar;
 
 namespace PresentacionWindows
 {
@@ -24,7 +25,8 @@ namespace PresentacionWindows
         {
             Mensaje mensaje = new Mensaje(tbTextoInicial.Text);
             CEncriptador encriptador = new CEncriptador(mensaje);
-            tbTextoFinal.Text = Mensaje.charAstring(encriptador.cifradoCesar());
+            encriptador.AlgoritmoActual = new AlgoritmoCesar();
+            tbTextoFinal.Text = encriptador.cifrar().textoS();
         }
     }
 }

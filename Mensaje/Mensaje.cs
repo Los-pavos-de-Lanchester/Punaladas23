@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace DominioMensaje
+namespace ModeloDominio
 {
     public class Mensaje
     {
@@ -38,15 +37,16 @@ namespace DominioMensaje
             string cadenaS = "";
             foreach (char c in cadena)
             {
-                cadenaS += c;
+                if (c == '\0') cadenaS += " ";//EL espacio llega como \0
+                else cadenaS += c;
             }
             return cadenaS;
         }
         //convierte string a char
         public static char[] stringAChar(string cadena)
         {
-            char[] cadenaC= new char[cadena.Length];
-            for(int i = 0; i < cadenaC.Length; i++)
+            char[] cadenaC = new char[cadena.Length];
+            for (int i = 0; i < cadenaC.Length; i++)
             {
                 cadenaC[i] = (char)cadena[i];
             }
