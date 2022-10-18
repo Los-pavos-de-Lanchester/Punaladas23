@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using DominioMensaje;
+using Encriptador;
 
 namespace PresentacionWindows
 {

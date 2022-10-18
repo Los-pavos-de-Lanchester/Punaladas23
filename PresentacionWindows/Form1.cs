@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using DominioMensaje;
+using Encriptador;
 
 namespace PresentacionWindows
 {
@@ -22,7 +23,8 @@ namespace PresentacionWindows
         private void btEncriptar_Click(object sender, EventArgs e)
         {
             Mensaje mensaje = new Mensaje(tbTextoInicial.Text);
-            tbTextoFinal.Text = mensaje.cifradoCesar().ToString();//No funcion el to string
+            CEncriptador encriptador = new CEncriptador(mensaje);
+            tbTextoFinal.Text = Mensaje.charAstring(encriptador.cifradoCesar());
         }
     }
 }

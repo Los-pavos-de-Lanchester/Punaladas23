@@ -4,30 +4,54 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using CifradoCesar;
-using DescifradoCesar;
 
 namespace DominioMensaje
 {
     public class Mensaje
     {
-        string texto;
+        char[] texto;
 
-        string Texto { get
-            {
-                return texto; 
-            }
-            set { texto = value; }
-            }
-
-        public Mensaje(string texto)
+        public Mensaje(char[] texto)
         {
             this.texto = texto;
         }
-
-        public char[] cifradoCesar()
+        public Mensaje(string texto)
         {
-            return AlgoritmoCifradoCesar.encriptarCesar(texto,5);
+            this.texto = stringAChar(texto);
         }
+
+
+        public string textoS()
+        {
+            return charAstring(this.texto);
+        }
+
+        public char[] textoC()
+        {
+            return this.texto;
+        }
+
+
+        //convierte char a string
+        public static string charAstring(char[] cadena)
+        {
+            string cadenaS = "";
+            foreach (char c in cadena)
+            {
+                cadenaS += c;
+            }
+            return cadenaS;
+        }
+        //convierte string a char
+        public static char[] stringAChar(string cadena)
+        {
+            char[] cadenaC= new char[cadena.Length];
+            for(int i = 0; i < cadenaC.Length; i++)
+            {
+                cadenaC[i] = (char)cadena[i];
+            }
+            return cadenaC;
+        }
+
     }
 }

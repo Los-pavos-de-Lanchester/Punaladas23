@@ -8,7 +8,7 @@ namespace CifradoCesar
 {
     public class AlgoritmoCifradoCesar
     {
-        public static char[] encriptarCesar(string mensaje, int corr)
+        public static char[] encriptarCesar(char[] mensaje, int corr)
         {
             char[] cifrado = new char[mensaje.Length];
             for (int i = 0; i < mensaje.Length; i++)

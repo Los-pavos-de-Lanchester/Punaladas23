@@ -44,15 +44,5 @@
     <Compile Include="Mensaje.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CifradoCesar\CifradoCesar.csproj">
-      <Project>{1a6c1bb3-c038-47a3-94fd-2d7a0df5a0c2}</Project>
-      <Name>CifradoCesar</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DescifradoCesar\DescifradoCesar.csproj">
-      <Project>{b3602a5b-3eb3-4b4a-b76f-1c3e7bd6f226}</Project>
-      <Name>DescifradoCesar</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
