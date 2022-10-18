@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Encriptador", "Encriptador\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoritmoEncriptacion", "Algoritmo\AlgoritmoEncriptacion.csproj", "{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CifradoVigenere", "CifradoVigenere\CifradoVigenere.csproj", "{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

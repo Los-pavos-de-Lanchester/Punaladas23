@@ -9,16 +9,16 @@ using ModeloDominio;
 
 namespace CifradoCesar
 {
-    public class AlgoritmoCesar: Algoritmo
+    public class Cesar: Algoritmo
     {
         int corr;
 
-        public AlgoritmoCesar(int corr=5)
+        public Cesar(string nombre,string descripcion,int corr=5):base(nombre,descripcion)
         {
             this.corr = corr;
         }
 
-        public Mensaje encriptar(Mensaje mensaje)
+        public override Mensaje encriptar(Mensaje mensaje)
         {
             char[] texto = mensaje.textoC();
             char[] cifrado = new char[texto.Length];
@@ -33,9 +33,5 @@ namespace CifradoCesar
             return new Mensaje(cifrado);
         }
 
-        public override string ToString()
-        {
-            return "Cesar";
-        }
     }
 }

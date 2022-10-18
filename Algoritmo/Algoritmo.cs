@@ -9,8 +9,25 @@ using ModeloDominio;
 
 namespace AlgoritmoEncriptacion
 {
-    public interface Algoritmo
+    public abstract class Algoritmo
     {
-        Mensaje encriptar(Mensaje mensaje);
+        string nombre;
+        string descripcion;
+
+        public string Nombre { get { return nombre; } }
+        public string Descripcion { get { return descripcion; } }
+
+        protected Algoritmo(string nombre, string descripcion)
+        {
+            this.nombre = nombre;
+            this.descripcion = descripcion;
+        }
+
+        public abstract Mensaje encriptar(Mensaje mensaje);
+
+        public override string ToString()
+        {
+            return "Algoritmo " + this.nombre;
+        }
     }
 }

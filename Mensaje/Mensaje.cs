@@ -8,23 +8,25 @@ namespace ModeloDominio
 {
     public class Mensaje
     {
+        //Almacena el texto como un vector de tipo char
         char[] texto;
-
+        //Constructor a partir de vector
         public Mensaje(char[] texto)
         {
             this.texto = texto;
         }
+        //Constructor a partir de cadena
         public Mensaje(string texto)
         {
             this.texto = stringAChar(texto);
         }
 
-
+        //Get como cadena
         public string textoS()
         {
             return charAstring(this.texto);
         }
-
+        //Get como vector
         public char[] textoC()
         {
             return this.texto;

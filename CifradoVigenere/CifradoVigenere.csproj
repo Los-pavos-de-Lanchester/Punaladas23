@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3925FFAE-A966-4C58-A78A-7999234386BC}</ProjectGuid>
+    <ProjectGuid>{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Encriptador</RootNamespace>
-    <AssemblyName>Encriptador</AssemblyName>
+    <RootNamespace>CifradoVigenere</RootNamespace>
+    <AssemblyName>CifradoVigenere</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Encriptador.cs" />
+    <Compile Include="Vigenere.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -9,7 +9,7 @@ using Encriptador;
 
 namespace PresentacionWindows
 {
-    internal static class Program
+    internal static class mainPrincipal
     {
         /// <summary>
         /// Punto de entrada principal para la aplicación.
@@ -19,7 +19,7 @@ namespace PresentacionWindows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new fPrincipal());
         }
     }
 }

@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="fPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="fPrincipal.Designer.cs">
+      <DependentUpon>fPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="mainPrincipal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="fPrincipal.resx">
+      <DependentUpon>fPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -87,6 +87,10 @@
     <ProjectReference Include="..\CifradoCesar\CifradoCesar.csproj">
       <Project>{1a6c1bb3-c038-47a3-94fd-2d7a0df5a0c2}</Project>
       <Name>CifradoCesar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CifradoVigenere\CifradoVigenere.csproj">
+      <Project>{3c176d21-1f62-49d3-9fc1-c64b2fe5e99b}</Project>
+      <Name>CifradoVigenere</Name>
     </ProjectReference>
     <ProjectReference Include="..\Encriptador\Encriptador.csproj">
       <Project>{3925ffae-a966-4c58-a78a-7999234386bc}</Project>

@@ -1,6 +1,6 @@
 ﻿namespace PresentacionWindows
 {
-    partial class Form1
+    partial class fPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -35,6 +35,9 @@
             this.laTextoAEncriptado = new System.Windows.Forms.Label();
             this.laTExtoEncriptado = new System.Windows.Forms.Label();
             this.laListaAlgoritmos = new System.Windows.Forms.Label();
+            this.laDescripcion = new System.Windows.Forms.Label();
+            this.btSalir = new System.Windows.Forms.Button();
+            this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // tbTextoInicial
@@ -44,6 +47,7 @@
             this.tbTextoInicial.Name = "tbTextoInicial";
             this.tbTextoInicial.Size = new System.Drawing.Size(300, 150);
             this.tbTextoInicial.TabIndex = 0;
+            this.tbTextoInicial.Text = "ALEA JACTA EST";
             // 
             // tbTextoFinal
             // 
@@ -71,6 +75,7 @@
             this.cbListaMetodos.Name = "cbListaMetodos";
             this.cbListaMetodos.Size = new System.Drawing.Size(121, 21);
             this.cbListaMetodos.TabIndex = 3;
+            this.cbListaMetodos.SelectedIndexChanged += new System.EventHandler(this.cbListaMetodos_SelectedIndexChanged);
             // 
             // laTextoAEncriptado
             // 
@@ -99,11 +104,42 @@
             this.laListaAlgoritmos.TabIndex = 6;
             this.laListaAlgoritmos.Text = "Lista algoritmos";
             // 
-            // Form1
+            // laDescripcion
+            // 
+            this.laDescripcion.AutoSize = true;
+            this.laDescripcion.Location = new System.Drawing.Point(9, 258);
+            this.laDescripcion.Name = "laDescripcion";
+            this.laDescripcion.Size = new System.Drawing.Size(66, 13);
+            this.laDescripcion.TabIndex = 7;
+            this.laDescripcion.Text = "Descripción:";
+            // 
+            // btSalir
+            // 
+            this.btSalir.Location = new System.Drawing.Point(731, 415);
+            this.btSalir.Name = "btSalir";
+            this.btSalir.Size = new System.Drawing.Size(75, 23);
+            this.btSalir.TabIndex = 8;
+            this.btSalir.Text = "Salir";
+            this.btSalir.UseVisualStyleBackColor = true;
+            this.btSalir.Click += new System.EventHandler(this.btSalir_Click);
+            // 
+            // tbDescripcion
+            // 
+            this.tbDescripcion.Location = new System.Drawing.Point(12, 275);
+            this.tbDescripcion.Multiline = true;
+            this.tbDescripcion.Name = "tbDescripcion";
+            this.tbDescripcion.ReadOnly = true;
+            this.tbDescripcion.Size = new System.Drawing.Size(300, 163);
+            this.tbDescripcion.TabIndex = 9;
+            // 
+            // fPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 450);
+            this.Controls.Add(this.tbDescripcion);
+            this.Controls.Add(this.btSalir);
+            this.Controls.Add(this.laDescripcion);
             this.Controls.Add(this.laListaAlgoritmos);
             this.Controls.Add(this.laTExtoEncriptado);
             this.Controls.Add(this.laTextoAEncriptado);
@@ -111,8 +147,9 @@
             this.Controls.Add(this.btEncriptar);
             this.Controls.Add(this.tbTextoFinal);
             this.Controls.Add(this.tbTextoInicial);
-            this.Name = "Form1";
+            this.Name = "fPrincipal";
             this.Text = "Puñaladas23";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +164,9 @@
         private System.Windows.Forms.Label laTextoAEncriptado;
         private System.Windows.Forms.Label laTExtoEncriptado;
         private System.Windows.Forms.Label laListaAlgoritmos;
+        private System.Windows.Forms.Label laDescripcion;
+        private System.Windows.Forms.Button btSalir;
+        private System.Windows.Forms.TextBox tbDescripcion;
     }
 }
 
