@@ -15,7 +15,12 @@ namespace CifradoVigenere
         {
         }
 
-        public override Mensaje encriptar(Mensaje mensaje)
+        public override Mensaje encriptar(Mensaje mensaje,Mensaje Clave)
+        {
+            return null;
+        }
+
+        public override Mensaje desEncriptar(Mensaje mensaje, Mensaje Clave)
         {
             return null;
         }

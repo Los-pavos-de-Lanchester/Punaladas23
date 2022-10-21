@@ -30,14 +30,18 @@
         {
             this.tbTextoInicial = new System.Windows.Forms.TextBox();
             this.tbTextoFinal = new System.Windows.Forms.TextBox();
-            this.btEncriptar = new System.Windows.Forms.Button();
+            this.btEjecutar = new System.Windows.Forms.Button();
             this.cbListaMetodos = new System.Windows.Forms.ComboBox();
-            this.laTextoAEncriptado = new System.Windows.Forms.Label();
-            this.laTExtoEncriptado = new System.Windows.Forms.Label();
+            this.laTextoInicial = new System.Windows.Forms.Label();
+            this.laTextoFinal = new System.Windows.Forms.Label();
             this.laListaAlgoritmos = new System.Windows.Forms.Label();
             this.laDescripcion = new System.Windows.Forms.Label();
             this.btSalir = new System.Windows.Forms.Button();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
+            this.tbClave = new System.Windows.Forms.TextBox();
+            this.laClave = new System.Windows.Forms.Label();
+            this.cbEncriptar = new System.Windows.Forms.CheckBox();
+            this.cbDesencriptar = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // tbTextoInicial
@@ -58,51 +62,52 @@
             this.tbTextoFinal.Size = new System.Drawing.Size(300, 150);
             this.tbTextoFinal.TabIndex = 1;
             // 
-            // btEncriptar
+            // btEjecutar
             // 
-            this.btEncriptar.Location = new System.Drawing.Point(371, 216);
-            this.btEncriptar.Name = "btEncriptar";
-            this.btEncriptar.Size = new System.Drawing.Size(75, 23);
-            this.btEncriptar.TabIndex = 2;
-            this.btEncriptar.Text = "Encriptar";
-            this.btEncriptar.UseVisualStyleBackColor = true;
-            this.btEncriptar.Click += new System.EventHandler(this.btEncriptar_Click);
+            this.btEjecutar.Location = new System.Drawing.Point(367, 206);
+            this.btEjecutar.Name = "btEjecutar";
+            this.btEjecutar.Size = new System.Drawing.Size(75, 23);
+            this.btEjecutar.TabIndex = 2;
+            this.btEjecutar.Text = "Encriptar";
+            this.btEjecutar.UseVisualStyleBackColor = true;
+            this.btEjecutar.Click += new System.EventHandler(this.btEncriptar_Click);
             // 
             // cbListaMetodos
             // 
+            this.cbListaMetodos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbListaMetodos.FormattingEnabled = true;
-            this.cbListaMetodos.Location = new System.Drawing.Point(348, 140);
+            this.cbListaMetodos.Location = new System.Drawing.Point(346, 108);
             this.cbListaMetodos.Name = "cbListaMetodos";
             this.cbListaMetodos.Size = new System.Drawing.Size(121, 21);
             this.cbListaMetodos.TabIndex = 3;
             this.cbListaMetodos.SelectedIndexChanged += new System.EventHandler(this.cbListaMetodos_SelectedIndexChanged);
             // 
-            // laTextoAEncriptado
+            // laTextoInicial
             // 
-            this.laTextoAEncriptado.AutoSize = true;
-            this.laTextoAEncriptado.Location = new System.Drawing.Point(139, 73);
-            this.laTextoAEncriptado.Name = "laTextoAEncriptado";
-            this.laTextoAEncriptado.Size = new System.Drawing.Size(87, 13);
-            this.laTextoAEncriptado.TabIndex = 4;
-            this.laTextoAEncriptado.Text = "Texto a encriptar";
+            this.laTextoInicial.AutoSize = true;
+            this.laTextoInicial.Location = new System.Drawing.Point(12, 73);
+            this.laTextoInicial.Name = "laTextoInicial";
+            this.laTextoInicial.Size = new System.Drawing.Size(63, 13);
+            this.laTextoInicial.TabIndex = 4;
+            this.laTextoInicial.Text = "Texto inicial";
             // 
-            // laTExtoEncriptado
+            // laTextoFinal
             // 
-            this.laTExtoEncriptado.AutoSize = true;
-            this.laTExtoEncriptado.Location = new System.Drawing.Point(565, 73);
-            this.laTExtoEncriptado.Name = "laTExtoEncriptado";
-            this.laTExtoEncriptado.Size = new System.Drawing.Size(87, 13);
-            this.laTExtoEncriptado.TabIndex = 5;
-            this.laTExtoEncriptado.Text = "Texto encriptado";
+            this.laTextoFinal.AutoSize = true;
+            this.laTextoFinal.Location = new System.Drawing.Point(503, 73);
+            this.laTextoFinal.Name = "laTextoFinal";
+            this.laTextoFinal.Size = new System.Drawing.Size(56, 13);
+            this.laTextoFinal.TabIndex = 5;
+            this.laTextoFinal.Text = "Texto final";
             // 
             // laListaAlgoritmos
             // 
             this.laListaAlgoritmos.AutoSize = true;
-            this.laListaAlgoritmos.Location = new System.Drawing.Point(348, 121);
+            this.laListaAlgoritmos.Location = new System.Drawing.Point(345, 92);
             this.laListaAlgoritmos.Name = "laListaAlgoritmos";
-            this.laListaAlgoritmos.Size = new System.Drawing.Size(79, 13);
+            this.laListaAlgoritmos.Size = new System.Drawing.Size(82, 13);
             this.laListaAlgoritmos.TabIndex = 6;
-            this.laListaAlgoritmos.Text = "Lista algoritmos";
+            this.laListaAlgoritmos.Text = "Lista algoritmos:";
             // 
             // laDescripcion
             // 
@@ -131,20 +136,68 @@
             this.tbDescripcion.ReadOnly = true;
             this.tbDescripcion.Size = new System.Drawing.Size(300, 163);
             this.tbDescripcion.TabIndex = 9;
+            this.tbDescripcion.TabStop = false;
+            // 
+            // tbClave
+            // 
+            this.tbClave.Location = new System.Drawing.Point(344, 157);
+            this.tbClave.Name = "tbClave";
+            this.tbClave.Size = new System.Drawing.Size(123, 20);
+            this.tbClave.TabIndex = 10;
+            this.tbClave.Text = "5";
+            // 
+            // laClave
+            // 
+            this.laClave.AutoSize = true;
+            this.laClave.Location = new System.Drawing.Point(343, 141);
+            this.laClave.Name = "laClave";
+            this.laClave.Size = new System.Drawing.Size(37, 13);
+            this.laClave.TabIndex = 11;
+            this.laClave.Text = "Clave:";
+            // 
+            // cbEncriptar
+            // 
+            this.cbEncriptar.AutoCheck = false;
+            this.cbEncriptar.AutoSize = true;
+            this.cbEncriptar.Checked = true;
+            this.cbEncriptar.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbEncriptar.Location = new System.Drawing.Point(329, 183);
+            this.cbEncriptar.Name = "cbEncriptar";
+            this.cbEncriptar.Size = new System.Drawing.Size(68, 17);
+            this.cbEncriptar.TabIndex = 12;
+            this.cbEncriptar.Text = "Encriptar";
+            this.cbEncriptar.UseVisualStyleBackColor = true;
+            this.cbEncriptar.Click += new System.EventHandler(this.cbEncriptar_Click);
+            // 
+            // cbDesencriptar
+            // 
+            this.cbDesencriptar.AutoCheck = false;
+            this.cbDesencriptar.AutoSize = true;
+            this.cbDesencriptar.Location = new System.Drawing.Point(414, 183);
+            this.cbDesencriptar.Name = "cbDesencriptar";
+            this.cbDesencriptar.Size = new System.Drawing.Size(86, 17);
+            this.cbDesencriptar.TabIndex = 13;
+            this.cbDesencriptar.Text = "Desencriptar";
+            this.cbDesencriptar.UseVisualStyleBackColor = true;
+            this.cbDesencriptar.Click += new System.EventHandler(this.cbDesencriptar_Click);
             // 
             // fPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 450);
+            this.Controls.Add(this.cbDesencriptar);
+            this.Controls.Add(this.cbEncriptar);
+            this.Controls.Add(this.laClave);
+            this.Controls.Add(this.tbClave);
             this.Controls.Add(this.tbDescripcion);
             this.Controls.Add(this.btSalir);
             this.Controls.Add(this.laDescripcion);
             this.Controls.Add(this.laListaAlgoritmos);
-            this.Controls.Add(this.laTExtoEncriptado);
-            this.Controls.Add(this.laTextoAEncriptado);
+            this.Controls.Add(this.laTextoFinal);
+            this.Controls.Add(this.laTextoInicial);
             this.Controls.Add(this.cbListaMetodos);
-            this.Controls.Add(this.btEncriptar);
+            this.Controls.Add(this.btEjecutar);
             this.Controls.Add(this.tbTextoFinal);
             this.Controls.Add(this.tbTextoInicial);
             this.Name = "fPrincipal";
@@ -159,14 +212,18 @@
 
         private System.Windows.Forms.TextBox tbTextoInicial;
         private System.Windows.Forms.TextBox tbTextoFinal;
-        private System.Windows.Forms.Button btEncriptar;
+        private System.Windows.Forms.Button btEjecutar;
         private System.Windows.Forms.ComboBox cbListaMetodos;
-        private System.Windows.Forms.Label laTextoAEncriptado;
-        private System.Windows.Forms.Label laTExtoEncriptado;
+        private System.Windows.Forms.Label laTextoInicial;
+        private System.Windows.Forms.Label laTextoFinal;
         private System.Windows.Forms.Label laListaAlgoritmos;
         private System.Windows.Forms.Label laDescripcion;
         private System.Windows.Forms.Button btSalir;
         private System.Windows.Forms.TextBox tbDescripcion;
+        private System.Windows.Forms.TextBox tbClave;
+        private System.Windows.Forms.Label laClave;
+        private System.Windows.Forms.CheckBox cbEncriptar;
+        private System.Windows.Forms.CheckBox cbDesencriptar;
     }
 }
 

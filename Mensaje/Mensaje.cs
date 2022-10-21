@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeloDominio
 {
-    public class Mensaje
+    public class Mensaje : IEquatable<Mensaje>
     {
         //Almacena el texto como un vector de tipo char
         char[] texto;
@@ -54,6 +54,15 @@ namespace ModeloDominio
             }
             return cadenaC;
         }
-
+        //El método toString devuelve una cadena con el mensaje
+        public override string ToString()
+        {
+            return this.textoS();
+        }
+        //Dos mensajes son iguales si el texto es idéntico
+        public bool Equals(Mensaje other)
+        {
+            return this.textoS() == other.textoS();
+        }
     }
 }

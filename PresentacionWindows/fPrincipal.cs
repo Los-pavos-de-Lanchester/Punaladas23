@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using ModeloDominio;
 using Encriptador;
 using CifradoCesar;
 using AlgoritmoEncriptacion;
@@ -32,33 +31,53 @@ namespace PresentacionWindows
             this.cbListaMetodos.SelectedIndex = 0;
             this.btEncriptar_Click(null, null);
         }
-
+        //Proceso de ejecución
         private void btEncriptar_Click(object sender, EventArgs e)
         {
-            //Almacena el texto en un Mensaje
-            Mensaje mensaje = new Mensaje(tbTextoInicial.Text);
             //Crea el encriptador pasándole el Mensaje
-            CEncriptador encriptador = new CEncriptador(mensaje);
+            CEncriptador encriptador = new CEncriptador(tbTextoInicial.Text,tbClave.Text);
             //Establece el algoritmo de encriptado
-            encriptador.AlgoritmoActual = coleccionAlgoritmos[0];
-            //Cifra, traduce a cadena y muestra el texto al usuario
-            tbTextoFinal.Text = encriptador.cifrar().textoS();
+            encriptador.AlgoritmoActual = coleccionAlgoritmos[this.cbListaMetodos.Text];
+            try
+            {
+                //Cifra/descifra, traduce a cadena y muestra el texto al usuario
+                if (this.cbEncriptar.Checked) tbTextoFinal.Text = encriptador.cifrarString();
+                else tbTextoFinal.Text = encriptador.desCifrarString();
+            }
+            catch (FormatException)//Clave no válida
+            {
+                MessageBox.Show("Clave no válida");
+            }
         }
-
+        //Determina qué ocurre al iniciarse la aplicación
         private void Form1_Load(object sender, EventArgs e)//Se muestra al ejecutar el programa
         {
             MessageBox.Show("Creado por Los Pavos Hacen Gluglú\nGracias por usar la aplicación.\nPor favor, no hagas cosas malas ;)");
         }
-
+        //Clic en el botón salir
         private void btSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+        //Actualización del algoritmo seleccionado
         private void cbListaMetodos_SelectedIndexChanged(object sender, EventArgs e)//Lo que sucede cuando se selecciona un algoritmo
         {
             //Muestra la descripcion del algoritmo
             this.tbDescripcion.Text = this.coleccionAlgoritmos[cbListaMetodos.Text].Descripcion;
+        }
+        //Clic en encriptar
+        private void cbEncriptar_Click(object sender, EventArgs e)
+        {
+            this.cbEncriptar.Checked = true;
+            this.cbDesencriptar.Checked = false;
+            this.btEjecutar.Text = this.cbEncriptar.Text;
+        }
+        //clic en desencriptar
+        private void cbDesencriptar_Click(object sender, EventArgs e)
+        {
+            this.cbEncriptar.Checked = false;
+            this.cbDesencriptar.Checked = true; ;
+            this.btEjecutar.Text = this.cbDesencriptar.Text;
         }
     }
 }

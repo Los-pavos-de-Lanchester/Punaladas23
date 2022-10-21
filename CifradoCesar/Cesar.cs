@@ -11,14 +11,21 @@ namespace CifradoCesar
 {
     public class Cesar: Algoritmo
     {
-        int corr;
 
-        public Cesar(string nombre,string descripcion,int corr=5):base(nombre,descripcion)
+        public Cesar(string nombre, string descripcion) : base(nombre, descripcion) { }
+
+        //Los dos siguientes métodos abstraen el algoritmo de la clase Mensaje
+        public override Mensaje encriptar(Mensaje mensaje,Mensaje clave)
         {
-            this.corr = corr;
+            return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave)));
+        }
+        public override Mensaje desEncriptar(Mensaje mensaje,Mensaje clave)
+        {
+            return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave)));//Por implementar
         }
 
-        public override Mensaje encriptar(Mensaje mensaje)
+        //agoritmo de encriptacion
+        private char[] encriptacion(Mensaje mensaje, int clave)
         {
             char[] texto = mensaje.textoC();
             char[] cifrado = new char[texto.Length];
@@ -26,12 +33,16 @@ namespace CifradoCesar
             {
                 if (texto[i] != ' ')
                 {
-                    cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + corr) % 26 + Convert.ToInt16('a'));
+                    cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + clave) % 26 + Convert.ToInt16('a'));
                 }
             }
 
-            return new Mensaje(cifrado);
+            return cifrado;
         }
-
+        //Convierte la clave en el tipo requerido por la impelmentación (int)
+        private int codificarClave(Mensaje clave)
+        {
+            return Convert.ToInt32(clave.textoS());
+        }
     }
 }

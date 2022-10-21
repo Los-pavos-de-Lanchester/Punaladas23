@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DescifradoCesar", "DescifradoCesar\DescifradoCesar.csproj", "{B3602A5B-3EB3-4B4A-B76F-1C3E7BD6F226}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModeloDominio", "Mensaje\ModeloDominio.csproj", "{C8893141-A4E5-48A6-B89E-D5D6A1887EDD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentacionWindows", "PresentacionWindows\PresentacionWindows.csproj", "{4B2E5F1B-B768-4686-A0FA-C80370AF6D76}"
@@ -17,16 +15,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoritmoEncriptacion", "Al
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CifradoVigenere", "CifradoVigenere\CifradoVigenere.csproj", "{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algoritmos", "Algoritmos", "{F196C74D-9A5F-4442-8B9E-30EE39683C96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B3602A5B-3EB3-4B4A-B76F-1C3E7BD6F226}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B3602A5B-3EB3-4B4A-B76F-1C3E7BD6F226}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B3602A5B-3EB3-4B4A-B76F-1C3E7BD6F226}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B3602A5B-3EB3-4B4A-B76F-1C3E7BD6F226}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C8893141-A4E5-48A6-B89E-D5D6A1887EDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C8893141-A4E5-48A6-B89E-D5D6A1887EDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C8893141-A4E5-48A6-B89E-D5D6A1887EDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -54,6 +50,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1A6C1BB3-C038-47A3-94FD-2D7A0DF5A0C2} = {F196C74D-9A5F-4442-8B9E-30EE39683C96}
+		{A4DA49AB-0694-43AF-9EE6-4CD3B6B098D6} = {F196C74D-9A5F-4442-8B9E-30EE39683C96}
+		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B} = {F196C74D-9A5F-4442-8B9E-30EE39683C96}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F25EA74F-5312-411F-BB16-AB3627A80204}

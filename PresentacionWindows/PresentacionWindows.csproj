@@ -96,10 +96,6 @@
       <Project>{3925ffae-a966-4c58-a78a-7999234386bc}</Project>
       <Name>Encriptador</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mensaje\ModeloDominio.csproj">
-      <Project>{c8893141-a4e5-48a6-b89e-d5d6a1887edd}</Project>
-      <Name>ModeloDominio</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

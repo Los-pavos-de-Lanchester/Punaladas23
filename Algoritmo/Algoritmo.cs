@@ -23,7 +23,8 @@ namespace AlgoritmoEncriptacion
             this.descripcion = descripcion;
         }
 
-        public abstract Mensaje encriptar(Mensaje mensaje);
+        public abstract Mensaje encriptar(Mensaje mensaje, Mensaje clave);
+        public abstract Mensaje desEncriptar(Mensaje mensaje, Mensaje clave);
 
         public override string ToString()
         {
