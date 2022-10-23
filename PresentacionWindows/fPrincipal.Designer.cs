@@ -42,6 +42,7 @@
             this.laClave = new System.Windows.Forms.Label();
             this.cbEncriptar = new System.Windows.Forms.CheckBox();
             this.cbDesencriptar = new System.Windows.Forms.CheckBox();
+            this.btIntercambiarTexto = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbTextoInicial
@@ -181,11 +182,22 @@
             this.cbDesencriptar.UseVisualStyleBackColor = true;
             this.cbDesencriptar.Click += new System.EventHandler(this.cbDesencriptar_Click);
             // 
+            // btIntercambiarTexto
+            // 
+            this.btIntercambiarTexto.Location = new System.Drawing.Point(367, 63);
+            this.btIntercambiarTexto.Name = "btIntercambiarTexto";
+            this.btIntercambiarTexto.Size = new System.Drawing.Size(75, 23);
+            this.btIntercambiarTexto.TabIndex = 14;
+            this.btIntercambiarTexto.Text = "<=====>";
+            this.btIntercambiarTexto.UseVisualStyleBackColor = true;
+            this.btIntercambiarTexto.Click += new System.EventHandler(this.button1_Click);
+            // 
             // fPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(818, 450);
+            this.Controls.Add(this.btIntercambiarTexto);
             this.Controls.Add(this.cbDesencriptar);
             this.Controls.Add(this.cbEncriptar);
             this.Controls.Add(this.laClave);
@@ -224,6 +236,7 @@
         private System.Windows.Forms.Label laClave;
         private System.Windows.Forms.CheckBox cbEncriptar;
         private System.Windows.Forms.CheckBox cbDesencriptar;
+        private System.Windows.Forms.Button btIntercambiarTexto;
     }
 }
 

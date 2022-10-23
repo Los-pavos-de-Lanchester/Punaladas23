@@ -21,7 +21,7 @@ namespace CifradoCesar
         }
         public override Mensaje desEncriptar(Mensaje mensaje,Mensaje clave)
         {
-            return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave)));//Por implementar
+            return new Mensaje(this.encriptacion(mensaje, -this.codificarClave(clave)));//Por implementar
         }
 
         //agoritmo de encriptacion

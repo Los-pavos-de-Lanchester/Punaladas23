@@ -79,5 +79,12 @@ namespace PresentacionWindows
             this.cbDesencriptar.Checked = true; ;
             this.btEjecutar.Text = this.cbDesencriptar.Text;
         }
+        //Intercambia los valores de los textos al hacer clic
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string caja = this.tbTextoInicial.Text;
+            this.tbTextoInicial.Text = this.tbTextoFinal.Text;
+            this.tbTextoFinal.Text = caja;
+        }
     }
 }
