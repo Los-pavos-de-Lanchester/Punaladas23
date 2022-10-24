@@ -33,12 +33,24 @@ namespace CifradoCesar
             {
                 if (texto[i] != ' ')
                 {
-                    cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + clave) % 26 + Convert.ToInt16('a'));
+                    if (texto[i]<= Convert.ToInt16('z') && texto[i] >= Convert.ToInt16('a')) {
+                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) - Convert.ToInt16('a') + clave) % 26 + Convert.ToInt16('a'));
+                    }
+                    else
+                    {
+                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) - Convert.ToInt16('A') + clave) % 26 + Convert.ToInt16('A'));
+                    }
                 }
             }
 
             return cifrado;
         }
+
+        //private void fuerzaBruta(Mensaje mensaje)
+        //{
+
+        //}
+
         //Convierte la clave en el tipo requerido por la impelmentación (int)
         private int codificarClave(Mensaje clave)
         {
