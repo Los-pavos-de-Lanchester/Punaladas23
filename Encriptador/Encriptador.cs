@@ -41,24 +41,24 @@ namespace Encriptador
         //Devuelve el mensaje encriptado
         internal Mensaje cifrarMensaje()
         {
-            return this.algoritmoActual.encriptar(this.texto,this.clave);
+            return this.algoritmoActual.encriptarMensaje(this.texto,this.clave);
         }
         //Devuelve una cadena que contiene el texto cifrado
         public string cifrarString()
         {
-            return this.cifrarMensaje().textoS();
+            return this.cifrarMensaje().cadenaS();
         }
 
 
         //Devuelve el mensaje desencriptado
         internal Mensaje desCifrarMensaje()
         {
-            return this.algoritmoActual.desEncriptar(this.texto, this.clave);
+            return this.algoritmoActual.desEncriptarMensaje(this.texto, this.clave);
         }
         //Devuelve una cadena que contiene el texto descifrado
         public string desCifrarString()
         {
-            return this.desCifrarMensaje().textoS();
+            return this.desCifrarMensaje().cadenaS();
         }
 
     }

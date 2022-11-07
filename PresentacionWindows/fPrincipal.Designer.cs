@@ -36,13 +36,19 @@
             this.laTextoFinal = new System.Windows.Forms.Label();
             this.laListaAlgoritmos = new System.Windows.Forms.Label();
             this.laDescripcion = new System.Windows.Forms.Label();
-            this.btSalir = new System.Windows.Forms.Button();
             this.tbDescripcion = new System.Windows.Forms.TextBox();
             this.tbClave = new System.Windows.Forms.TextBox();
             this.laClave = new System.Windows.Forms.Label();
             this.cbEncriptar = new System.Windows.Forms.CheckBox();
             this.cbDesencriptar = new System.Windows.Forms.CheckBox();
             this.btIntercambiarTexto = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmNuevo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmAbrirArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmGuardarArchivo = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbTextoInicial
@@ -119,16 +125,6 @@
             this.laDescripcion.TabIndex = 7;
             this.laDescripcion.Text = "Descripción:";
             // 
-            // btSalir
-            // 
-            this.btSalir.Location = new System.Drawing.Point(731, 415);
-            this.btSalir.Name = "btSalir";
-            this.btSalir.Size = new System.Drawing.Size(75, 23);
-            this.btSalir.TabIndex = 8;
-            this.btSalir.Text = "Salir";
-            this.btSalir.UseVisualStyleBackColor = true;
-            this.btSalir.Click += new System.EventHandler(this.btSalir_Click);
-            // 
             // tbDescripcion
             // 
             this.tbDescripcion.Location = new System.Drawing.Point(12, 275);
@@ -192,6 +188,53 @@
             this.btIntercambiarTexto.UseVisualStyleBackColor = true;
             this.btIntercambiarTexto.Click += new System.EventHandler(this.button1_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(818, 24);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmNuevo,
+            this.tsmAbrirArchivo,
+            this.tsmGuardarArchivo,
+            this.tsmSalir});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // tsmNuevo
+            // 
+            this.tsmNuevo.Name = "tsmNuevo";
+            this.tsmNuevo.Size = new System.Drawing.Size(180, 22);
+            this.tsmNuevo.Text = "Nuevo";
+            this.tsmNuevo.Click += new System.EventHandler(this.tsmNuevo_Click);
+            // 
+            // tsmAbrirArchivo
+            // 
+            this.tsmAbrirArchivo.Name = "tsmAbrirArchivo";
+            this.tsmAbrirArchivo.Size = new System.Drawing.Size(180, 22);
+            this.tsmAbrirArchivo.Text = "Abrir archivo";
+            // 
+            // tsmGuardarArchivo
+            // 
+            this.tsmGuardarArchivo.Name = "tsmGuardarArchivo";
+            this.tsmGuardarArchivo.Size = new System.Drawing.Size(180, 22);
+            this.tsmGuardarArchivo.Text = "Guardar archivo";
+            // 
+            // tsmSalir
+            // 
+            this.tsmSalir.Name = "tsmSalir";
+            this.tsmSalir.Size = new System.Drawing.Size(180, 22);
+            this.tsmSalir.Text = "Salir";
+            this.tsmSalir.Click += new System.EventHandler(this.btSalir_Click);
+            // 
             // fPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -203,7 +246,6 @@
             this.Controls.Add(this.laClave);
             this.Controls.Add(this.tbClave);
             this.Controls.Add(this.tbDescripcion);
-            this.Controls.Add(this.btSalir);
             this.Controls.Add(this.laDescripcion);
             this.Controls.Add(this.laListaAlgoritmos);
             this.Controls.Add(this.laTextoFinal);
@@ -212,9 +254,12 @@
             this.Controls.Add(this.btEjecutar);
             this.Controls.Add(this.tbTextoFinal);
             this.Controls.Add(this.tbTextoInicial);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "fPrincipal";
             this.Text = "Puñaladas23";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,13 +275,18 @@
         private System.Windows.Forms.Label laTextoFinal;
         private System.Windows.Forms.Label laListaAlgoritmos;
         private System.Windows.Forms.Label laDescripcion;
-        private System.Windows.Forms.Button btSalir;
         private System.Windows.Forms.TextBox tbDescripcion;
         private System.Windows.Forms.TextBox tbClave;
         private System.Windows.Forms.Label laClave;
         private System.Windows.Forms.CheckBox cbEncriptar;
         private System.Windows.Forms.CheckBox cbDesencriptar;
         private System.Windows.Forms.Button btIntercambiarTexto;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmNuevo;
+        private System.Windows.Forms.ToolStripMenuItem tsmAbrirArchivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmGuardarArchivo;
+        private System.Windows.Forms.ToolStripMenuItem tsmSalir;
     }
 }
 

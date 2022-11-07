@@ -48,11 +48,15 @@ namespace PresentacionWindows
             {
                 MessageBox.Show("Clave no válida");
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al ejectar.\n\nMensaje: " + ex.Message);
+            }
         }
         //Determina qué ocurre al iniciarse la aplicación
         private void Form1_Load(object sender, EventArgs e)//Se muestra al ejecutar el programa
         {
-            MessageBox.Show("Creado por Los Pavos Hacen Gluglú\nGracias por usar la aplicación.\nPor favor, no hagas cosas malas ;)");
+            //MessageBox.Show("Creado por Los Pavos Hacen Gluglú\nGracias por usar la aplicación.\nPor favor, no hagas cosas malas ;)");
         }
         //Clic en el botón salir
         private void btSalir_Click(object sender, EventArgs e)
@@ -85,6 +89,17 @@ namespace PresentacionWindows
             string caja = this.tbTextoInicial.Text;
             this.tbTextoInicial.Text = this.tbTextoFinal.Text;
             this.tbTextoFinal.Text = caja;
+            this.cbEncriptar.Checked=!this.cbEncriptar.Checked;
+            this.cbDesencriptar.Checked=!this.cbDesencriptar.Checked;
+        }
+
+        private void tsmNuevo_Click(object sender, EventArgs e)
+        {
+            this.tbTextoInicial.Text = "";
+            this.tbTextoFinal.Text = "";
+            this.cbEncriptar_Click(null, null);
+            this.cbListaMetodos.SelectedIndex = 0;
+            this.tbClave.Text = "";
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,31 +9,59 @@ namespace ModeloDominio
 {
     public class Mensaje : IEquatable<Mensaje>
     {
-        //Almacena el texto como un vector de tipo char
-        char[] texto;
-        //Constructor a partir de vector
-        public Mensaje(char[] texto)
+        //Almacena el cadena como un vector de tipo char
+        int[] cadena;
+        //Constructor a partir de char
+        public Mensaje(char[] cadena)
         {
-            this.texto = texto;
+            this.cadena = charAInt(cadena);
         }
         //Constructor a partir de cadena
-        public Mensaje(string texto)
+        public Mensaje(string cadena)
         {
-            this.texto = stringAChar(texto);
+            this.cadena = stringAInt(cadena);
         }
+        //Constructor a partir de enteros
+        public Mensaje(int[] cadena)
+        {
+            this.cadena = cadena;
+        }
+
 
         //Get como cadena
-        public string textoS()
+        public string cadenaS()
         {
-            return charAstring(this.texto);
+            return intAString(this.cadena);
         }
-        //Get como vector
-        public char[] textoC()
+        //Get como char
+        public char[] cadenaC()
         {
-            return this.texto;
+            return charAInt(this.cadena);
+        }
+        //Get como int
+        public int[] cadenaI()
+        {
+            return this.cadena;
         }
 
 
+        //set como int
+        public void Cadena(int[] cadena)
+        {
+            this.cadena = cadena;
+        }
+        //set como char
+        public void Cadena(char[] cadena)
+        {
+            this.cadena = charAInt(cadena);
+        }        
+        //set como string
+        public void Cadena(string cadena)
+        {
+            this.cadena = stringAInt(cadena);
+        }
+
+        //Conversores
         //convierte char a string
         public static string charAstring(char[] cadena)
         {
@@ -54,15 +83,55 @@ namespace ModeloDominio
             }
             return cadenaC;
         }
+        //COnvierte string a int
+        public static int[] stringAInt(string cadena)
+        {
+            int[] cadenaI = new int[cadena.Length];
+            for(int i = 0, n = cadena.Length; i < n; i++)
+            {
+                cadenaI[i] = Convert.ToInt16(cadena[i]);
+            }
+            return cadenaI;
+        }
+        //Convierte int a string
+        public static string intAString(int[] cadena)
+        {
+            string cadenaC = "";
+            for (int i = 0, n = cadena.Length; i < n; i++)
+            {
+                cadenaC += Convert.ToChar(cadena[i]);
+            }
+            return cadenaC;
+        }
+        //Convierte char a int
+        public static int[] charAInt(char[] cadena)
+        {
+            return Mensaje.stringAInt(Mensaje.charAstring(cadena));
+        }
+        //onvierte int a char
+        public static char[] charAInt(int[] cadena)
+        {
+            return Mensaje.stringAChar(Mensaje.intAString(cadena));
+        }
+
+        //Redefiniciones
+
+
         //El método toString devuelve una cadena con el mensaje
         public override string ToString()
         {
-            return this.textoS();
+            return this.cadenaS();
         }
-        //Dos mensajes son iguales si el texto es idéntico
+        //Dos mensajes son iguales si el cadena es idéntico
         public bool Equals(Mensaje other)
         {
-            return this.textoS() == other.textoS();
+            if (other == null) return false;//Si nulo falso
+            if(cadena.Length != other.cadena.Length) return false;//Si la longitud es diferente directamente falso
+            for(int i=0,n=this.cadena.Length; i < n; i++)
+            {
+                if (this.cadena[i] != other.cadena[i]) return false;//Si uno falso falso
+            }
+            return true;//Si llega aquí cierto
         }
     }
 }

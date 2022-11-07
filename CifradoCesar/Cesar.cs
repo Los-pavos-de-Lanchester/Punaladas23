@@ -14,20 +14,28 @@ namespace CifradoCesar
 
         public Cesar(string nombre, string descripcion) : base(nombre, descripcion) { }
 
-        //Los dos siguientes métodos abstraen el algoritmo de la clase Mensaje
-        public override Mensaje encriptar(Mensaje mensaje,Mensaje clave)
+        //Los cuatro siguientes métodos abstraen el algoritmo de la clase Mensaje
+        public override Mensaje encriptarMensaje(Mensaje mensaje,Mensaje clave)
         {
             return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave)));
         }
-        public override Mensaje desEncriptar(Mensaje mensaje,Mensaje clave)
+        public override Mensaje desEncriptarMensaje(Mensaje mensaje,Mensaje clave)
         {
-            return new Mensaje(this.encriptacion(mensaje, -this.codificarClave(clave)));//Por implementar
+            return new Mensaje(this.encriptacion(mensaje, -this.codificarClave(clave)));
+        }
+        public override void encriptar(Mensaje mensaje, Mensaje clave)
+        {
+            mensaje.Cadena(this.encriptarMensaje(mensaje, clave).cadenaI());
+        }
+        public override void desEncriptar(Mensaje mensaje, Mensaje clave)
+        {
+            mensaje.Cadena(this.desEncriptarMensaje(mensaje, clave).cadenaI());
         }
 
         //agoritmo de encriptacion
         private char[] encriptacion(Mensaje mensaje, int clave)
         {
-            char[] texto = mensaje.textoC();
+            char[] texto = mensaje.cadenaC();
             char[] cifrado = new char[texto.Length];
             for (int i = 0; i < texto.Length; i++)
             {
@@ -54,7 +62,7 @@ namespace CifradoCesar
         //Convierte la clave en el tipo requerido por la impelmentación (int)
         private int codificarClave(Mensaje clave)
         {
-            return Convert.ToInt32(clave.textoS());
+            return Convert.ToInt32(clave.cadenaS());
         }
     }
 }
