@@ -54,11 +54,6 @@ namespace CifradoCesar
             return cifrado;
         }
 
-        //private void fuerzaBruta(Mensaje mensaje)
-        //{
-
-        //}
-
         //Convierte la clave en el tipo requerido por la impelmentación (int)
         private int codificarClave(Mensaje clave)
         {
