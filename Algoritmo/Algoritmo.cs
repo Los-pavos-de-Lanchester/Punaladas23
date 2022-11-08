@@ -11,8 +11,8 @@ namespace AlgoritmoEncriptacion
 {
     public abstract class Algoritmo
     {
-        string nombre;
-        string descripcion;
+        private string nombre;
+        private string descripcion;
 
         public string Nombre { get { return nombre; } }
         public string Descripcion { get { return descripcion; } }

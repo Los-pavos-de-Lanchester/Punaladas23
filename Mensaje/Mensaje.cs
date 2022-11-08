@@ -14,12 +14,12 @@ namespace ModeloDominio
         //Constructor a partir de char
         public Mensaje(char[] cadena)
         {
-            this.cadena = charAInt(cadena);
+            this.cadena = aInt(cadena);
         }
         //Constructor a partir de cadena
         public Mensaje(string cadena)
         {
-            this.cadena = stringAInt(cadena);
+            this.cadena = aInt(cadena);
         }
         //Constructor a partir de enteros
         public Mensaje(int[] cadena)
@@ -29,41 +29,46 @@ namespace ModeloDominio
 
 
         //Get como cadena
-        public string cadenaS()
+        public string cadenaS
         {
-            return intAString(this.cadena);
+            get { return aString(this.cadena); }
         }
         //Get como char
-        public char[] cadenaC()
+        public char[] cadenaC
         {
-            return charAInt(this.cadena);
+            get { return aInt(this.cadena); }
         }
         //Get como int
-        public int[] cadenaI()
+        public int[] cadenaI
         {
-            return this.cadena;
+            get { return this.cadena; }
+        }
+        //set Cadena
+        public int[] Cadena {//Como sobrecargar?
+            set { this.setCadena(value); }
         }
 
-
-        //set como int
-        public void Cadena(int[] cadena)
+        #region métodos auxiliares par el set
+        private void setCadena(int[] cadena)
         {
             this.cadena = cadena;
         }
         //set como char
-        public void Cadena(char[] cadena)
+        private void setCadena(char[] cadena)
         {
-            this.cadena = charAInt(cadena);
-        }        
-        //set como string
-        public void Cadena(string cadena)
-        {
-            this.cadena = stringAInt(cadena);
+            this.cadena = aInt(cadena);
         }
+        //set como string
+        private void setCadena(string cadena)
+        {
+            this.cadena = aInt(cadena);
+        } 
+        #endregion
+
 
         //Conversores
         //convierte char a string
-        public static string charAstring(char[] cadena)
+        public static string astring(char[] cadena)
         {
             string cadenaS = "";
             foreach (char c in cadena)
@@ -74,7 +79,7 @@ namespace ModeloDominio
             return cadenaS;
         }
         //convierte string a char
-        public static char[] stringAChar(string cadena)
+        public static char[] aChar(string cadena)
         {
             char[] cadenaC = new char[cadena.Length];
             for (int i = 0; i < cadenaC.Length; i++)
@@ -84,7 +89,7 @@ namespace ModeloDominio
             return cadenaC;
         }
         //COnvierte string a int
-        public static int[] stringAInt(string cadena)
+        public static int[] aInt(string cadena)
         {
             int[] cadenaI = new int[cadena.Length];
             for(int i = 0, n = cadena.Length; i < n; i++)
@@ -94,7 +99,7 @@ namespace ModeloDominio
             return cadenaI;
         }
         //Convierte int a string
-        public static string intAString(int[] cadena)
+        public static string aString(int[] cadena)
         {
             string cadenaC = "";
             for (int i = 0, n = cadena.Length; i < n; i++)
@@ -104,14 +109,14 @@ namespace ModeloDominio
             return cadenaC;
         }
         //Convierte char a int
-        public static int[] charAInt(char[] cadena)
+        public static int[] aInt(char[] cadena)
         {
-            return Mensaje.stringAInt(Mensaje.charAstring(cadena));
+            return Mensaje.aInt(Mensaje.astring(cadena));
         }
         //onvierte int a char
-        public static char[] charAInt(int[] cadena)
+        public static char[] aInt(int[] cadena)
         {
-            return Mensaje.stringAChar(Mensaje.intAString(cadena));
+            return Mensaje.aChar(Mensaje.aString(cadena));
         }
 
         //Redefiniciones
@@ -120,7 +125,7 @@ namespace ModeloDominio
         //El método toString devuelve una cadena con el mensaje
         public override string ToString()
         {
-            return this.cadenaS();
+            return this.cadenaS;
         }
         //Dos mensajes son iguales si el cadena es idéntico
         public bool Equals(Mensaje other)

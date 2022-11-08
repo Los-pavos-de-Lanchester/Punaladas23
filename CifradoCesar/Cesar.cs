@@ -25,17 +25,17 @@ namespace CifradoCesar
         }
         public override void encriptar(Mensaje mensaje, Mensaje clave)
         {
-            mensaje.Cadena(this.encriptarMensaje(mensaje, clave).cadenaI());
+            mensaje.Cadena=this.encriptarMensaje(mensaje, clave).cadenaI;
         }
         public override void desEncriptar(Mensaje mensaje, Mensaje clave)
         {
-            mensaje.Cadena(this.desEncriptarMensaje(mensaje, clave).cadenaI());
+            mensaje.Cadena=this.desEncriptarMensaje(mensaje, clave).cadenaI;
         }
 
         //agoritmo de encriptacion
         private char[] encriptacion(Mensaje mensaje, int clave)
         {
-            char[] texto = mensaje.cadenaC();
+            char[] texto = mensaje.cadenaC;
             char[] cifrado = new char[texto.Length];
             for (int i = 0; i < texto.Length; i++)
             {
@@ -57,7 +57,7 @@ namespace CifradoCesar
         //Convierte la clave en el tipo requerido por la impelmentación (int)
         private int codificarClave(Mensaje clave)
         {
-            return Convert.ToInt32(clave.cadenaS());
+            return Convert.ToInt32(clave.cadenaS);
         }
     }
 }

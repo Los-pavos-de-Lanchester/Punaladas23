@@ -46,7 +46,7 @@ namespace Encriptador
         //Devuelve una cadena que contiene el texto cifrado
         public string cifrarString()
         {
-            return this.cifrarMensaje().cadenaS();
+            return this.cifrarMensaje().cadenaS;
         }
 
 
@@ -58,7 +58,7 @@ namespace Encriptador
         //Devuelve una cadena que contiene el texto descifrado
         public string desCifrarString()
         {
-            return this.desCifrarMensaje().cadenaS();
+            return this.desCifrarMensaje().cadenaS;
         }
 
     }
