@@ -27,7 +27,7 @@ namespace CifradoVigenere
 
         public override void encriptar(Mensaje mensaje, Mensaje clave)
         {
-            mensaje.Cadena = Mensaje.aInt(this.encriptacion(mensaje, clave));//Apaño. POr arreglar en Mensaje
+            mensaje.CadenaC = this.encriptacion(mensaje, clave);
         }
         public override void desEncriptar(Mensaje mensaje, Mensaje clave)
         {
@@ -36,20 +36,20 @@ namespace CifradoVigenere
         //agoritmo de encriptacion
         private char[] encriptacion(Mensaje mensaje, Mensaje clave)
         {
-            char[] texto = mensaje.cadenaC;
+            char[] texto = mensaje.CadenaC;
             char[] cifrado = new char[texto.Length];
-            Mensaje claveMinusculas = new Mensaje(clave.cadenaS.ToLower()); 
+            Mensaje claveMinusculas = new Mensaje(clave.CadenaS.ToLower()); 
             for (int i = 0; i < texto.Length; i++)
             {
                 if (texto[i] != ' ')
                 {
                     if (texto[i] <= Convert.ToInt16('z') && texto[i] >= Convert.ToInt16('a'))
                     {
-                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.cadenaC[i % (clave.cadenaC.Length)] - 2 * Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
+                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.CadenaC[i % (clave.CadenaC.Length)] - 2 * Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
                     }
                     else
                     {
-                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.cadenaC[i % (clave.cadenaC.Length)] - Convert.ToInt16('A') - Convert.ToInt16('a')) % 26 + Convert.ToInt16('A'));
+                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.CadenaC[i % (clave.CadenaC.Length)] - Convert.ToInt16('A') - Convert.ToInt16('a')) % 26 + Convert.ToInt16('A'));
                     }
                     
                 }
@@ -61,9 +61,9 @@ namespace CifradoVigenere
 
         private char[] desencriptacion(Mensaje mensaje, Mensaje clave)
         {
-            char[] texto = mensaje.cadenaC;
+            char[] texto = mensaje.CadenaC;
             char[] cifrado = new char[texto.Length];
-            Mensaje claveMinusculasOriginal = new Mensaje(clave.cadenaS.ToLower());
+            Mensaje claveMinusculasOriginal = new Mensaje(clave.CadenaS.ToLower());
             Mensaje claveMinusculas = invertirClave(claveMinusculasOriginal);
             for (int i = 0; i < texto.Length; i++)
             {
@@ -71,11 +71,11 @@ namespace CifradoVigenere
                 {
                     if (texto[i] <= Convert.ToInt16('z') && texto[i] >= Convert.ToInt16('a'))
                     {
-                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.cadenaC[i % (clave.cadenaC.Length)] - 2 * Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
+                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.CadenaC[i % (clave.CadenaC.Length)] - 2 * Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
                     }
                     else
                     {
-                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.cadenaC[i % (clave.cadenaC.Length)] - Convert.ToInt16('A') - Convert.ToInt16('a')) % 26 + Convert.ToInt16('A'));
+                        cifrado[i] = Convert.ToChar((Convert.ToInt16(texto[i]) + claveMinusculas.CadenaC[i % (clave.CadenaC.Length)] - Convert.ToInt16('A') - Convert.ToInt16('a')) % 26 + Convert.ToInt16('A'));
                     }
 
                 }
@@ -87,15 +87,15 @@ namespace CifradoVigenere
         //Convierte la clave en el tipo requerido por la impelmentación (int)
         private int codificarClave(Mensaje clave)
         {
-            return Convert.ToInt32(clave.cadenaS);
+            return Convert.ToInt32(clave.CadenaS);
         }
 
        public Mensaje invertirClave(Mensaje clave)
         {
-            char[] inverso = new char[clave.cadenaS.Length];
+            char[] inverso = new char[clave.CadenaS.Length];
             for (int i = 0; i < inverso.Length; i++)
             {
-                inverso[i] = Convert.ToChar((26 - Convert.ToInt16(clave.cadenaC[i]) - Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
+                inverso[i] = Convert.ToChar((26 - Convert.ToInt16(clave.CadenaC[i]) - Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
             }
             return new Mensaje(inverso);
         }

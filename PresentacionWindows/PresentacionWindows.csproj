@@ -89,14 +89,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Algoritmo\AlgoritmoEncriptacion.csproj">
-      <Project>{a4da49ab-0694-43af-9ee6-4cd3b6b098d6}</Project>
-      <Name>AlgoritmoEncriptacion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ColeccionEncriptacion\ColeccionEncriptacion.csproj">
-      <Project>{c99cb087-0cba-40b8-aa56-21c772f04c26}</Project>
-      <Name>ColeccionEncriptacion</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Encriptador\Encriptador.csproj">
       <Project>{3925ffae-a966-4c58-a78a-7999234386bc}</Project>
       <Name>Encriptador</Name>

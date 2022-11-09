@@ -1,5 +1,4 @@
-﻿using AlgoritmoEncriptacion;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,18 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using ColeccionEncriptacion;
 
 namespace PresentacionWindows
 {
     public partial class fPrincipal : Form
     {
         private int childFormNumber = 0;
-        private ColeccionAlgoritmos coleccionAlgoritmos;
 
         public fPrincipal()
         {
-            this.coleccionAlgoritmos = ColeccionAlgoritmos.Algoritmos;
             InitializeComponent();
         }
 
@@ -108,7 +104,7 @@ namespace PresentacionWindows
                 childForm.Close();
             }
         }
-
+        //al iniciarse la aplicacion
         private void fPrincipal_Load(object sender, EventArgs e)
         {
             //MessageBox.Show("Creado por Los Pavos Hacen Gluglú\nGracias por usar la aplicación.\nPor favor, no hagas cosas malas ;)");
@@ -116,8 +112,13 @@ namespace PresentacionWindows
         //Clic en vista simplificada
         private void tsmVistaSimplificada_Click(object sender, EventArgs e)
         {
+            if(this.ActiveMdiChild!=null)
+                if (MessageBox.Show("Se cerrarán las pestañas abiertas\n¿Quieres cambiar de vista?", "Aviso", MessageBoxButtons.YesNo) == DialogResult.Cancel) return;
+            this.closeAllToolStripMenuItem.PerformClick();
             fSimple fSimple = new fSimple();
             fSimple.Show();
+            //this.Hide();//oculta el formulario
         }
+
     }
 }

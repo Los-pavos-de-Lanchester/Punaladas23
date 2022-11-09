@@ -9,21 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using Encriptador;
-using AlgoritmoEncriptacion;
-using ColeccionEncriptacion;
 
 namespace PresentacionWindows
 {
     public partial class fSimple : Form
     {
-        ColeccionAlgoritmos coleccionAlgoritmos;
         public fSimple()
         {
-            coleccionAlgoritmos = ColeccionAlgoritmos.Algoritmos;
             InitializeComponent();
-            foreach(Algoritmo algoritmo in coleccionAlgoritmos)
+            foreach(string algoritmo in CEncriptador.ListaAlgoritmosS)
             {
-                this.cbListaMetodos.Items.Add(algoritmo.Nombre);
+                this.cbListaMetodos.Items.Add(algoritmo);
             }
             this.cbListaMetodos.SelectedIndex = 0;
             this.btEncriptar_Click(null, null);
@@ -34,7 +30,7 @@ namespace PresentacionWindows
             //Crea el encriptador pasándole el Mensaje
             CEncriptador encriptador = new CEncriptador(tbTextoInicial.Text,tbClave.Text);
             //Establece el algoritmo de encriptado
-            encriptador.AlgoritmoActual = coleccionAlgoritmos[this.cbListaMetodos.Text];
+            encriptador.AlgoritmoActualS = this.cbListaMetodos.Text;
             try
             {
                 //Cifra/descifra, traduce a cadena y muestra el texto al usuario
@@ -60,7 +56,7 @@ namespace PresentacionWindows
         private void cbListaMetodos_SelectedIndexChanged(object sender, EventArgs e)//Lo que sucede cuando se selecciona un algoritmo
         {
             //Muestra la descripcion del algoritmo
-            this.tbDescripcion.Text = this.coleccionAlgoritmos[cbListaMetodos.Text].Descripcion;
+            this.tbDescripcion.Text = CEncriptador.ListaALgortimosDescripcion[cbListaMetodos.Text];
         }
         //Clic en encriptar
         private void cbEncriptar_Click(object sender, EventArgs e)

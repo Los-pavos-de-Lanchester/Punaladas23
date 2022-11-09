@@ -212,26 +212,26 @@
             // tsmNuevo
             // 
             this.tsmNuevo.Name = "tsmNuevo";
-            this.tsmNuevo.Size = new System.Drawing.Size(158, 22);
+            this.tsmNuevo.Size = new System.Drawing.Size(180, 22);
             this.tsmNuevo.Text = "Nuevo";
             this.tsmNuevo.Click += new System.EventHandler(this.tsmNuevo_Click);
             // 
             // tsmAbrirArchivo
             // 
             this.tsmAbrirArchivo.Name = "tsmAbrirArchivo";
-            this.tsmAbrirArchivo.Size = new System.Drawing.Size(158, 22);
+            this.tsmAbrirArchivo.Size = new System.Drawing.Size(180, 22);
             this.tsmAbrirArchivo.Text = "Abrir archivo";
             // 
             // tsmGuardarArchivo
             // 
             this.tsmGuardarArchivo.Name = "tsmGuardarArchivo";
-            this.tsmGuardarArchivo.Size = new System.Drawing.Size(158, 22);
+            this.tsmGuardarArchivo.Size = new System.Drawing.Size(180, 22);
             this.tsmGuardarArchivo.Text = "Guardar archivo";
             // 
             // tsmSalir
             // 
             this.tsmSalir.Name = "tsmSalir";
-            this.tsmSalir.Size = new System.Drawing.Size(158, 22);
+            this.tsmSalir.Size = new System.Drawing.Size(180, 22);
             this.tsmSalir.Text = "Salir";
             this.tsmSalir.Click += new System.EventHandler(this.btSalir_Click);
             // 
@@ -257,7 +257,6 @@
             this.Controls.Add(this.menuStrip1);
             this.Name = "fSimple";
             this.Text = "Puñaladas23";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
