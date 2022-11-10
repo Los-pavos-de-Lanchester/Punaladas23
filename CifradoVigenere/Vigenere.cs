@@ -22,7 +22,7 @@ namespace CifradoVigenere
 
         public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje clave)
         {
-            return new Mensaje(desencriptacion(mensaje, clave));
+            return new Mensaje(encriptacion(mensaje, invertirClave(clave)));
         }
 
         public override void encriptar(Mensaje mensaje, Mensaje clave)
@@ -95,7 +95,10 @@ namespace CifradoVigenere
             char[] inverso = new char[clave.CadenaS.Length];
             for (int i = 0; i < inverso.Length; i++)
             {
-                inverso[i] = Convert.ToChar((26 - Convert.ToInt16(clave.CadenaC[i]) - Convert.ToInt16('a')) % 26 + Convert.ToInt16('a'));
+                int letra = Convert.ToInt16(clave.CadenaC[i]) - Convert.ToInt16('a');
+                letra = 26 - letra;
+                letra = letra + Convert.ToInt16('a');
+                inverso[i] = Convert.ToChar(letra);
             }
             return new Mensaje(inverso);
         }
