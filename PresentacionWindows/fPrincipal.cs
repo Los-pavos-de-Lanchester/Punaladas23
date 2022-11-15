@@ -123,14 +123,14 @@ namespace PresentacionWindows
 
         private void tsmEncriptar_Click(object sender, EventArgs e)
         {
-            this.nuevoEditor(this.ActiveMdiChild.Text,this)
+            
         }
 
         private void tsmDesencriptar_Click(object sender, EventArgs e)
         {
 
         }
-
+        //crea contructores
         public fEditor nuevoEditor(string nombre,string texto)
         {
             fEditor fEditor = new fEditor(nombre,texto);

@@ -28,33 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rtEditor = new System.Windows.Forms.RichTextBox();
+            this.rtbEditor = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // rtEditor
+            // rtbEditor
             // 
-            this.rtEditor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtEditor.Location = new System.Drawing.Point(0, 0);
-            this.rtEditor.Name = "rtEditor";
-            this.rtEditor.Size = new System.Drawing.Size(800, 450);
-            this.rtEditor.TabIndex = 0;
-            this.rtEditor.Text = "";
+            this.rtbEditor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbEditor.Location = new System.Drawing.Point(0, 0);
+            this.rtbEditor.Name = "rtbEditor";
+            this.rtbEditor.Size = new System.Drawing.Size(800, 450);
+            this.rtbEditor.TabIndex = 0;
+            this.rtbEditor.Text = "";
             // 
             // fEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.rtEditor);
+            this.Controls.Add(this.rtbEditor);
             this.Name = "fEditor";
             this.Text = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fEditor_FormClosing);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox rtEditor;
+        private System.Windows.Forms.RichTextBox rtbEditor;
     }
 }
