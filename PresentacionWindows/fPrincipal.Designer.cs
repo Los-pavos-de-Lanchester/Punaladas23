@@ -55,6 +55,7 @@
             this.viewMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.toolBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmVistaSimplificada = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +83,8 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tsmVistaSimplificada = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEncriptar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDesencriptar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -314,10 +316,19 @@
             this.statusBarToolStripMenuItem.Text = "&Barra de estado";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
             // 
+            // tsmVistaSimplificada
+            // 
+            this.tsmVistaSimplificada.Name = "tsmVistaSimplificada";
+            this.tsmVistaSimplificada.Size = new System.Drawing.Size(189, 22);
+            this.tsmVistaSimplificada.Text = "Vista simplificada";
+            this.tsmVistaSimplificada.Click += new System.EventHandler(this.tsmVistaSimplificada_Click);
+            // 
             // toolsMenu
             // 
             this.toolsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.optionsToolStripMenuItem});
+            this.optionsToolStripMenuItem,
+            this.tsmEncriptar,
+            this.tsmDesencriptar});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(90, 20);
             this.toolsMenu.Text = "&Herramientas";
@@ -325,7 +336,7 @@
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "&Opciones";
             // 
             // windowsMenu
@@ -528,12 +539,19 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
             // 
-            // tsmVistaSimplificada
+            // tsmEncriptar
             // 
-            this.tsmVistaSimplificada.Name = "tsmVistaSimplificada";
-            this.tsmVistaSimplificada.Size = new System.Drawing.Size(189, 22);
-            this.tsmVistaSimplificada.Text = "Vista simplificada";
-            this.tsmVistaSimplificada.Click += new System.EventHandler(this.tsmVistaSimplificada_Click);
+            this.tsmEncriptar.Name = "tsmEncriptar";
+            this.tsmEncriptar.Size = new System.Drawing.Size(180, 22);
+            this.tsmEncriptar.Text = "Encriptar";
+            this.tsmEncriptar.Click += new System.EventHandler(this.tsmEncriptar_Click);
+            // 
+            // tsmDesencriptar
+            // 
+            this.tsmDesencriptar.Name = "tsmDesencriptar";
+            this.tsmDesencriptar.Size = new System.Drawing.Size(180, 22);
+            this.tsmDesencriptar.Text = "Desencriptar";
+            this.tsmDesencriptar.Click += new System.EventHandler(this.tsmDesencriptar_Click);
             // 
             // fPrincipal
             // 
@@ -614,6 +632,8 @@
         private System.Windows.Forms.ToolStripButton helpToolStripButton;
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.ToolStripMenuItem tsmVistaSimplificada;
+        private System.Windows.Forms.ToolStripMenuItem tsmEncriptar;
+        private System.Windows.Forms.ToolStripMenuItem tsmDesencriptar;
     }
 }
 

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formuarioEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formuarioEditor.Designer.cs">
+      <DependentUpon>formuarioEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="fSimple.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +66,9 @@
       <DependentUpon>fPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="formuarioEditor.resx">
+      <DependentUpon>formuarioEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fSimple.resx">
       <DependentUpon>fSimple.cs</DependentUpon>
     </EmbeddedResource>

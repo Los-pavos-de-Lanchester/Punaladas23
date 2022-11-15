@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Encriptador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,10 +23,10 @@ namespace PresentacionWindows
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
-            childForm.MdiParent = this;
-            childForm.Text = "Ventana " + childFormNumber++;
-            childForm.Show();
+            Form fEditor = new fEditor();
+            fEditor.MdiParent = this;
+            fEditor.Text = "Ventana " + childFormNumber++;
+            fEditor.Show();
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -120,5 +121,20 @@ namespace PresentacionWindows
             //this.Hide();//oculta el formulario
         }
 
+        private void tsmEncriptar_Click(object sender, EventArgs e)
+        {
+            this.nuevoEditor(this.ActiveMdiChild.Text,this)
+        }
+
+        private void tsmDesencriptar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public fEditor nuevoEditor(string nombre,string texto)
+        {
+            fEditor fEditor = new fEditor(nombre,texto);
+            return fEditor;
+        }
     }
 }
