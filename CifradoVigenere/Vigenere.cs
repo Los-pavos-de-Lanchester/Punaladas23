@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using ModeloDominio;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CifradoVigenere
 {
@@ -31,6 +32,7 @@ namespace CifradoVigenere
         }
         public override void desEncriptar(Mensaje mensaje, Mensaje clave)
         {
+            mensaje.CadenaC=this.desencriptacion(mensaje, clave);
         }
 
         //agoritmo de encriptacion
