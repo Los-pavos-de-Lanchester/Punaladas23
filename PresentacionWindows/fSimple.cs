@@ -43,7 +43,7 @@ namespace PresentacionWindows
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al ejectar.\n\nMensaje: " + ex.Message);
+                MessageBox.Show("Error al ejecutar.\n\nMensaje: " + ex.Message);
             }
         }
 

@@ -46,11 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlesUsuario\Vigenere.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUsuario\Vigenere.Designer.cs">
+      <DependentUpon>Vigenere.cs</DependentUpon>
+    </Compile>
     <Compile Include="fEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fEditor.Designer.cs">
       <DependentUpon>fEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fdialogoCriptografia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fdialogoCriptografia.Designer.cs">
+      <DependentUpon>fdialogoCriptografia.cs</DependentUpon>
     </Compile>
     <Compile Include="fSimple.cs">
       <SubType>Form</SubType>
@@ -66,6 +78,21 @@
       <DependentUpon>fPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ControlesUsuario\Cesar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUsuario\Cesar.Designer.cs">
+      <DependentUpon>Cesar.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ControlesUsuario\Cesar.resx">
+      <DependentUpon>Cesar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesUsuario\Vigenere.resx">
+      <DependentUpon>Vigenere.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fdialogoCriptografia.resx">
+      <DependentUpon>fdialogoCriptografia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fEditor.resx">
       <DependentUpon>fEditor.cs</DependentUpon>
     </EmbeddedResource>
