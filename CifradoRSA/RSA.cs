@@ -16,7 +16,8 @@ namespace CifradoRSA
         //Los cuatro siguientes métodos abstraen el algoritmo de la clase Mensaje
         public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje clave)
         {
-            return new Mensaje(this.encriptacion(mensaje.CadenaI, clave.CadenaI[0], clave.CadenaI[1], clave.CadenaI[2]));
+            //return new Mensaje(this.encriptacion(mensaje.CadenaI, clave.CadenaI[0], clave.CadenaI[1], clave.CadenaI[2]));
+            return null;
         }
         public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje clave)
         {
@@ -32,22 +33,40 @@ namespace CifradoRSA
         }
 
         //agoritmo de encriptacion
-        private int[] encriptacion(int[] mensaje, int p, int q, int e)
+        public static int[] encriptacion(int[] mensaje, int p, int q, int e)
         {
             int[] cifrado = new int[mensaje.Length];
             int n = p * q;
             int d = calcularClave(p,q,e);
-            foreach (int i in mensaje)
+
+            for (int i=0;i<mensaje.Length;i++)
             {
-                cifrado[i] = (i^d)%n;
+                int aux = (int)(Math.Pow(mensaje[i],d))%n;
+                cifrado[i] = aux;
             }
             
             return cifrado;
         }
 
-        private int calcularClave(int p,int q,int e)
+        public static int calcularClave(int p,int q,int e)
         {
+            int z = (p - 1) * (q - 1);
+            int j = calcularCongruencia(z,e);
+            return j;
+        }
 
+        private static int calcularCongruencia(int z, int k)
+        {
+            int x = 1;
+            while (true)
+            {
+                if ((1 + x * z)%k == 0)
+                {
+                    return (1 + x * z) / k;
+                }
+                x++;
+                
+            }
         }
 
         //Convierte la clave en el tipo requerido por la impelmentación (int)
