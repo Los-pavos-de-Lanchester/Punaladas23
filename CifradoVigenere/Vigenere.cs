@@ -10,29 +10,29 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace CifradoVigenere
 {
-    public class Vigenere:Algoritmo
+    public class Vigenere:Algoritmo//revisar caabeceras encriptacion. Código repetido
     {
         public Vigenere(string nombre, string descripcion) : base(nombre, descripcion)
         {
         }
 
-        public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje clave)
+        public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-            return new Mensaje(encriptacion(mensaje, clave));
+            return new Mensaje(encriptacion(mensaje, clave[0]));
         }
 
-        public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje clave)
+        public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-            return new Mensaje(encriptacion(mensaje, invertirClave(clave)));
+            return new Mensaje(encriptacion(mensaje, invertirClave(clave[0])));
         }
 
-        public override void encriptar(Mensaje mensaje, Mensaje clave)
+        public override void encriptar(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-            mensaje.CadenaC = this.encriptacion(mensaje, clave);
+            mensaje.CadenaC = this.encriptacion(mensaje, clave[0]);
         }
-        public override void desEncriptar(Mensaje mensaje, Mensaje clave)
+        public override void desEncriptar(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-            mensaje.CadenaC=this.desencriptacion(mensaje, clave);
+            mensaje.CadenaC=this.desencriptacion(mensaje, clave[0]);
         }
 
         //agoritmo de encriptacion

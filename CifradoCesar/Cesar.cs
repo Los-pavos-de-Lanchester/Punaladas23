@@ -15,19 +15,20 @@ namespace CifradoCesar
         public Cesar(string nombre, string descripcion) : base(nombre, descripcion) { }
 
         //Los cuatro siguientes métodos abstraen el algoritmo de la clase Mensaje
-        public override Mensaje encriptarMensaje(Mensaje mensaje,Mensaje clave)
+        public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-            return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave)));
+
+            return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave[0])));
         }
-        public override Mensaje desEncriptarMensaje(Mensaje mensaje,Mensaje clave)
+        public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-            return new Mensaje(this.encriptacion(mensaje, -this.codificarClave(clave)));
+            return new Mensaje(this.encriptacion(mensaje, -this.codificarClave(clave[0])));
         }
-        public override void encriptar(Mensaje mensaje, Mensaje clave)
+        public override void encriptar(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
             mensaje.CadenaI=this.encriptarMensaje(mensaje, clave).CadenaI;
         }
-        public override void desEncriptar(Mensaje mensaje, Mensaje clave)
+        public override void desEncriptar(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
             mensaje.CadenaI=this.desEncriptarMensaje(mensaje, clave).CadenaI;
         }
@@ -59,5 +60,6 @@ namespace CifradoCesar
         {
             return Convert.ToInt32(clave.CadenaS);
         }
+
     }
 }
