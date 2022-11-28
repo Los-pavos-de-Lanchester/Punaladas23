@@ -14,22 +14,23 @@ namespace CifradoRSA
         public Rsa(string nombre, string descripcion) : base(nombre, descripcion) { }
 
         //Los cuatro siguientes métodos abstraen el algoritmo de la clase Mensaje
-        public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje clave)
+        public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args)
         {
-            //return new Mensaje(this.encriptacion(mensaje.CadenaI, clave.CadenaI[0], clave.CadenaI[1], clave.CadenaI[2]));
+            int aux = partirMensaje(mensaje);
+            Rsa.encriptacion(aux, clave[0].CadenaC, clave[1].CadenaC, clave[2].CadenaC)
             return null;
         }
-        public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje clave)
+        public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args)
         {
             return null;
         }
-        public override void encriptar(Mensaje mensaje, Mensaje clave)
+        public override void encriptar(Mensaje mensaje, Mensaje []clave, Mensaje[] args)
         {
-            mensaje.CadenaI = this.encriptarMensaje(mensaje, clave).CadenaI;
+            mensaje.CadenaI = this.encriptarMensaje(mensaje, clave,args).CadenaI;
         }
-        public override void desEncriptar(Mensaje mensaje, Mensaje clave)
+        public override void desEncriptar(Mensaje mensaje, Mensaje[] clave, Mensaje[] args)
         {
-            mensaje.CadenaI = this.desEncriptarMensaje(mensaje, clave).CadenaI;
+            mensaje.CadenaI = this.desEncriptarMensaje(mensaje, clave,args).CadenaI;
         }
 
         //agoritmo de encriptacion
@@ -41,7 +42,7 @@ namespace CifradoRSA
 
             for (int i=0;i<mensaje.Length;i++)
             {
-                int aux = (int)(Math.Pow(mensaje[i],d))%n;
+                int aux = (int)(Math.Pow(mensaje[i],e))%n;
                 cifrado[i] = aux;
             }
             
@@ -50,7 +51,17 @@ namespace CifradoRSA
 
         public static int[] desencriptacion(int[] mensaje, int p, int q, int e)
         {
-            return null;
+            int[] cifrado = new int[mensaje.Length];
+            int n = p * q;
+            int d = calcularClave(p, q, e);
+
+            for (int i = 0; i < mensaje.Length; i++)
+            {
+                int aux = (int)(Math.Pow(mensaje[i], d)) % n;
+                cifrado[i] = aux;
+            }
+
+            return cifrado; ;
         }
 
         public static int calcularClave(int p,int q,int e)
@@ -73,10 +84,13 @@ namespace CifradoRSA
         }
 
         //Convierte la clave en el tipo requerido por la impelmentación (int)
-        private int codificarClave(Mensaje clave)
+        private int partirMensaje(Mensaje mensaje)
         {
-            return Convert.ToInt32(clave.CadenaS);
+            return Convert.ToInt32(mensaje.CadenaS);
         }
+
+
+        
     }
 
 }
