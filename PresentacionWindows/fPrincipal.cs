@@ -120,10 +120,10 @@ namespace PresentacionWindows
             fSimple.Show();
             //this.Hide();//oculta el formulario
         }
-
+        //encriptación
         private void tsmEncriptar_Click(object sender, EventArgs e)
         {
-            fdialogoCriptografia fdialogo = new fdialogoCriptografia();
+            fdialogoCriptografia fdialogo = new fdialogoCriptografia(CEncriptador.ListaAlgoritmosS());
             fdialogo.ShowDialog();
         }
 

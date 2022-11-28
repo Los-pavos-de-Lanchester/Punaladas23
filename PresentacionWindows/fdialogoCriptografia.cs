@@ -12,7 +12,7 @@ namespace PresentacionWindows
 {
     public partial class fdialogoCriptografia : Form
     {
-        public fdialogoCriptografia()
+        public fdialogoCriptografia(Dictionary<string,string> algoritmos, out string algoritmoElegido, out string[] clave, out string[] args)
         {
             InitializeComponent();
         }
