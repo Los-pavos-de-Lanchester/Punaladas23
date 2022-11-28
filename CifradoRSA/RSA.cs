@@ -48,6 +48,11 @@ namespace CifradoRSA
             return cifrado;
         }
 
+        public static int[] desencriptacion(int[] mensaje, int p, int q, int e)
+        {
+            return null;
+        }
+
         public static int calcularClave(int p,int q,int e)
         {
             int z = (p - 1) * (q - 1);
@@ -58,15 +63,13 @@ namespace CifradoRSA
         private static int calcularCongruencia(int z, int k)
         {
             int x = 1;
-            while (true)
+
+
+            while ((1 + x * z) % k != 0)
             {
-                if ((1 + x * z)%k == 0)
-                {
-                    return (1 + x * z) / k;
-                }
                 x++;
-                
             }
+            return (1 + x * z) / k;
         }
 
         //Convierte la clave en el tipo requerido por la impelmentación (int)
