@@ -31,7 +31,6 @@
             this.btAceptar = new System.Windows.Forms.Button();
             this.btCancelar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.SuspendLayout();
             // 
             // btAceptar
             // 
@@ -61,15 +60,7 @@
             // 
             // dialogoCriptografia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btCancelar);
-            this.Controls.Add(this.btAceptar);
-            this.Name = "dialogoCriptografia";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
+
 
         }
 

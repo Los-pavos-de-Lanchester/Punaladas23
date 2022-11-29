@@ -9,7 +9,7 @@ using ModeloDominio;
 
 namespace CifradoCesar
 {
-    public class Cesar: Algoritmo
+    public sealed class Cesar: Algoritmo
     {
 
         public Cesar(string nombre, string descripcion) : base(nombre, descripcion) { }

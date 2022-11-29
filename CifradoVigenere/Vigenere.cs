@@ -10,7 +10,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace CifradoVigenere
 {
-    public class Vigenere:Algoritmo//revisar caabeceras encriptacion. Código repetido
+    public sealed class Vigenere:Algoritmo//revisar caabeceras encriptacion. Código repetido
     {
         public Vigenere(string nombre, string descripcion) : base(nombre, descripcion)
         {

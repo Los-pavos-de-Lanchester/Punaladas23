@@ -59,7 +59,7 @@
       <DependentUpon>fEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="fdialogoCriptografia.cs">
-      <SubType>Form</SubType>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="fdialogoCriptografia.Designer.cs">
       <DependentUpon>fdialogoCriptografia.cs</DependentUpon>

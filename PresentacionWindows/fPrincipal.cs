@@ -123,7 +123,7 @@ namespace PresentacionWindows
         //encriptación
         private void tsmEncriptar_Click(object sender, EventArgs e)
         {
-            fdialogoCriptografia fdialogo = new fdialogoCriptografia(CEncriptador.ListaAlgoritmosS());
+            fdialogoCriptografia fdialogo = new fdialogoCriptografia(/*CEncriptador.ListaAlgoritmosS()*/);
             fdialogo.ShowDialog();
         }
 

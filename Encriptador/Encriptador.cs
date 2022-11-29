@@ -19,14 +19,18 @@ namespace Encriptador
         //Mensaje suceptible de ser encriptado
         private Mensaje texto;
         //Mensaje que contiene la clave
-        private Mensaje clave;
+        private Mensaje[] clave;
+        //Posibles argumentos adicioneales
+        private Mensaje[] args;
 
         //Comportamiento del encriptador (algoritmo empleado para el cifrado)
         private Algoritmo algoritmoActual;
 
         internal Mensaje Texto { get { return texto; } set { texto = value; } }
 
-        internal Mensaje Clave { get { return clave; } set { texto = value; } }
+        internal Mensaje[] Clave { get { return clave; } set { clave = value; } }
+
+        internal Mensaje[] Args { get { return args; } set { args = value; } }
 
         internal Algoritmo AlgoritmoActual { get { return algoritmoActual; } set { this.algoritmoActual = value; } }
 
@@ -64,21 +68,47 @@ namespace Encriptador
             this.texto = null;
             this.clave = null;
             this.algoritmoActual = null;
+            this.args = null;
         }
-        public CEncriptador(string texto, string clave):this() {
+        public CEncriptador(string texto, string clave):this() {//optimizable llamada al constructor de abajpo?
             this.texto=new Mensaje(texto);
-            this.clave = new Mensaje(clave);
+            this.clave = new Mensaje[1];
+            this.clave[0] = new Mensaje(clave);
         }
-        internal CEncriptador(Mensaje texto,Mensaje clave):this() {
+
+        public CEncriptador(string texto, string[] clave) : this()
+        {
+            int n = clave.Length;
+            this.texto = new Mensaje(texto);
+            this.clave = new Mensaje[n];
+            for(int i = 0; i< n; i++)this.clave[i] = new Mensaje(clave[i]);
+        }
+
+
+        internal CEncriptador(Mensaje texto,Mensaje clave):this()
+        {//optimizable llamada al constructor de abajpo?
+            this.texto = texto;
+            this.clave = new Mensaje[1];
+            this.clave[0] = clave;
+        }
+
+        internal CEncriptador(Mensaje texto, Mensaje[] clave) : this()
+        {
             this.texto = texto;
             this.clave = clave;
         }
-        internal CEncriptador(Mensaje texto,Mensaje clave,Algoritmo algoritmoActual): this()
+
+        internal CEncriptador(Mensaje texto,Mensaje clave,Algoritmo algoritmoActual): this(texto,clave)
         {
-            this.texto = texto;
-            this.clave=clave;
             this.algoritmoActual = algoritmoActual;
         }
+
+        internal CEncriptador(Mensaje texto, Mensaje[] clave, Algoritmo algoritmoActual) : this(texto,clave)
+        {
+            this.algoritmoActual = algoritmoActual;
+        }
+
+
 
         //Devuelve el mensaje encriptado
         internal Mensaje cifrarMensaje()

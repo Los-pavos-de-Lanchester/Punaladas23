@@ -8,7 +8,7 @@ using ModeloDominio;
 
 namespace CifradoRSA
 {
-    public class Rsa : Algoritmo
+    public sealed class Rsa : Algoritmo
     {
 
         public Rsa(string nombre, string descripcion) : base(nombre, descripcion) { }
@@ -17,7 +17,7 @@ namespace CifradoRSA
         public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args)
         {
             int aux = partirMensaje(mensaje);
-            Rsa.encriptacion(aux, clave[0].CadenaC, clave[1].CadenaC, clave[2].CadenaC)
+            //Rsa.encriptacion(aux, clave[0].CadenaC, clave[1].CadenaC, clave[2].CadenaC);
             return null;
         }
         public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args)
