@@ -123,8 +123,7 @@ namespace PresentacionWindows
         //encriptación
         private void tsmEncriptar_Click(object sender, EventArgs e)
         {
-            fdialogoCriptografia fdialogo = new fdialogoCriptografia(/*CEncriptador.ListaAlgoritmosS()*/);
-            fdialogo.ShowDialog();
+            this.nuevoEditor(this.ActiveMdiChild.Text + "Cifrado", (this.ActiveMdiChild as fEditor).encriptar());//Crea a partir del activo
         }
 
         private void tsmDesencriptar_Click(object sender, EventArgs e)

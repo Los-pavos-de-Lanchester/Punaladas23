@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Encriptador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,5 +29,14 @@ namespace PresentacionWindows
             get { return this.rtbEditor.Text; }
             set { this.rtbEditor.Text = value; }
         }
+
+        public string encriptar()
+        {
+            CEncriptador encriptador= new CEncriptador(this.Texto);//dialogo de crecion por implementar
+            fdialogoCriptografia fdialogo = new fdialogoCriptografia();
+
+            return encriptador.cifrarString();
+        }
     }
+
 }

@@ -1,14 +1,20 @@
 ﻿using Encriptador;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PresentacionWindows
 {
     public partial class fdialogoCriptografia : CommonDialog
     {
-        public fdialogoCriptografia(/*Dictionary<string,string> algoritmos, out string algoritmoElegido, out string[] clave, out string[] args*/)
+
+        public fdialogoCriptografia()
         {
             InitializeComponent();
+        }
+        public fdialogoCriptografia(Dictionary<string,string> algoritmos, string algoritmoElegido, string[] clave, string[] args):this()
+        {
+            
         }
 
         public override void Reset()

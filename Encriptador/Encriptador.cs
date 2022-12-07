@@ -70,6 +70,11 @@ namespace Encriptador
             this.algoritmoActual = null;
             this.args = null;
         }
+
+        public CEncriptador(string texto):this()
+        {
+            this.texto = new Mensaje(texto);
+        }
         public CEncriptador(string texto, string clave):this() {//optimizable llamada al constructor de abajpo?
             this.texto=new Mensaje(texto);
             this.clave = new Mensaje[1];
@@ -84,7 +89,10 @@ namespace Encriptador
             for(int i = 0; i< n; i++)this.clave[i] = new Mensaje(clave[i]);
         }
 
-
+        internal CEncriptador(Mensaje texto) : this()
+        {
+            this.texto = texto;
+        }
         internal CEncriptador(Mensaje texto,Mensaje clave):this()
         {//optimizable llamada al constructor de abajpo?
             this.texto = texto;
