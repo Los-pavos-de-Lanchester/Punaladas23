@@ -18,7 +18,7 @@ namespace PresentacionWindows
             InitializeComponent();
         }
 
-        public fEditor(string nombre,string texto):base()
+        public fEditor(string nombre,string texto):this()
         {
             this.Texto = texto;
             this.Text = nombre;
@@ -33,7 +33,9 @@ namespace PresentacionWindows
         public string encriptar()
         {
             CEncriptador encriptador= new CEncriptador(this.Texto);//dialogo de crecion por implementar
-            fdialogoCriptografia fdialogo = new fdialogoCriptografia();
+            fdialogoCriptografia fdialogo = new fdialogoCriptografia(CEncriptador.ListaALgortimosDescripcion);
+            encriptador.AlgoritmoActualS = "Cesar";//fdialogo.AlgoritmoElegido;
+            encriptador.ClaveS = "3";//fdialogo.ClaveElegida;
 
             return encriptador.cifrarString();
         }

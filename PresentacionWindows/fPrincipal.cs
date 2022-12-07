@@ -23,10 +23,7 @@ namespace PresentacionWindows
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form fEditor = new fEditor();
-            fEditor.MdiParent = this;
-            fEditor.Text = "Ventana " + childFormNumber++;
-            fEditor.Show();
+            this.nuevoEditor("Ventana " + childFormNumber++, "");
         }
 
         private void OpenFile(object sender, EventArgs e)
@@ -123,7 +120,7 @@ namespace PresentacionWindows
         //encriptación
         private void tsmEncriptar_Click(object sender, EventArgs e)
         {
-            this.nuevoEditor(this.ActiveMdiChild.Text + "Cifrado", (this.ActiveMdiChild as fEditor).encriptar());//Crea a partir del activo
+            fEditor feditor = this.nuevoEditor(this.ActiveMdiChild.Text + "Cifrado", (this.ActiveMdiChild as fEditor).encriptar());//Crea a partir del activo
         }
 
         private void tsmDesencriptar_Click(object sender, EventArgs e)
@@ -134,6 +131,8 @@ namespace PresentacionWindows
         public fEditor nuevoEditor(string nombre,string texto)
         {
             fEditor fEditor = new fEditor(nombre,texto);
+            fEditor.MdiParent= this;
+            fEditor.Show();
             return fEditor;
         }
     }

@@ -36,6 +36,18 @@ namespace Encriptador
 
         public string AlgoritmoActualS { get { return algoritmoActual.Nombre; } set { this.algoritmoActual = coleccionAlgoritmos[value]; } }
 
+        public string TextoS
+        {
+            get { return this.texto.ToString(); }
+            set { this.Texto = new Mensaje(value); }
+        }
+
+        public string ClaveS//Solo devuelve el primero
+        {
+            get { return this.clave[0].ToString(); }
+            set { this.Clave = new Mensaje[1]; this.Clave[0] = new Mensaje(value); }
+        }
+
         public static List<string> ListaAlgoritmosS
         {
             get 
