@@ -120,7 +120,9 @@ namespace PresentacionWindows
         //encriptación
         private void tsmEncriptar_Click(object sender, EventArgs e)
         {
-            fEditor feditor = this.nuevoEditor(this.ActiveMdiChild.Text + "Cifrado", (this.ActiveMdiChild as fEditor).encriptar());//Crea a partir del activo
+            string texto = (this.ActiveMdiChild as fEditor).encriptar();
+            if (texto == null) return;
+            fEditor feditor = this.nuevoEditor(this.ActiveMdiChild.Text + "Cifrado", texto);//Crea a partir del activo
         }
 
         private void tsmDesencriptar_Click(object sender, EventArgs e)

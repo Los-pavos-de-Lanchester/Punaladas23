@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PresentacionWindows.ControlesUsuario;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PresentacionWindows
 {
-    public partial class Cesar : UserControl
+    public partial class Cesar : UserControl, IControlAlgoritmo
     {
         public Cesar()
         {
@@ -20,6 +21,11 @@ namespace PresentacionWindows
         private void tbClave_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public string[] Clave
+        {
+            get { return new string[1] { this.tbClave.Text }; }
         }
     }
 }

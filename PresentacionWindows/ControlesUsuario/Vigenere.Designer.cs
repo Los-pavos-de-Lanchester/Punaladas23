@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.lClave = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbClave = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lClave
@@ -41,19 +41,19 @@
             this.lClave.TabIndex = 0;
             this.lClave.Text = "Clave:";
             // 
-            // textBox1
+            // tbClave
             // 
-            this.textBox1.Location = new System.Drawing.Point(131, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.UseSystemPasswordChar = true;
+            this.tbClave.Location = new System.Drawing.Point(131, 43);
+            this.tbClave.Name = "tbClave";
+            this.tbClave.Size = new System.Drawing.Size(100, 20);
+            this.tbClave.TabIndex = 1;
+            this.tbClave.UseSystemPasswordChar = true;
             // 
             // Vigenere
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbClave);
             this.Controls.Add(this.lClave);
             this.Name = "Vigenere";
             this.Size = new System.Drawing.Size(292, 112);
@@ -65,6 +65,6 @@
         #endregion
 
         private System.Windows.Forms.Label lClave;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbClave;
     }
 }
