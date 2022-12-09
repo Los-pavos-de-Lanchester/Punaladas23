@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace PresentacionWindows.ControlesUsuario
 {
-    public partial class Vigenere : UserControl,IControlAlgoritmo
+    public partial class Vigenere : IControlAlgoritmo
     {
         public Vigenere()
         {
             InitializeComponent();
         }
-        public string[] Clave
+        public override string[] Clave
         {
             get { return new string[1] { this.tbClave.Text }; }
         }
-    }
 
+        public override string[] Args { get { return null; } }
+    }
 
 }

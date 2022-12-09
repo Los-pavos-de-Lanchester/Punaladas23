@@ -11,21 +11,23 @@ using System.Windows.Forms;
 
 namespace PresentacionWindows
 {
-    public partial class Cesar : UserControl, IControlAlgoritmo
+    public partial class Cesar : IControlAlgoritmo
     {
         public Cesar()
         {
             InitializeComponent();
         }
 
-        private void tbClave_TextChanged(object sender, EventArgs e)
+        private void mtbClave_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        public string[] Clave
+        public override string[] Clave
         {
-            get { return new string[1] { this.tbClave.Text }; }
+            get { return new string[1] { this.mtbClave.Text }; }
         }
+
+        public override string[] Args { get { return null; } }
     }
 }

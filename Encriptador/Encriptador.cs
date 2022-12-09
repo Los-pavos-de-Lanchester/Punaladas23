@@ -51,7 +51,11 @@ namespace Encriptador
         public string[] ClavesS
         {
             /*get { return this.clave }*/
-            set { Mensaje[] mensajes=new Mensaje[value.Length];for (int i = 0,n = value.Length;i<n;i++) { mensajes[i] = new Mensaje(value[i]); } }
+            set
+            {
+                Mensaje[] mensajes=new Mensaje[value.Length];
+                for(int i = 0,n = value.Length;i<n;i++) { mensajes[i] = new Mensaje(value[i]); }
+            }
         }
 
         public static List<string> ListaAlgoritmosS

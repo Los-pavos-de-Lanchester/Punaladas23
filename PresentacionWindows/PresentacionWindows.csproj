@@ -46,7 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlesUsuario\IControlAlgoritmo.cs" />
+    <Compile Include="ControlesUsuario\ControlUsuarioFactoria.cs" />
+    <Compile Include="ControlesUsuario\IControlAlgoritmo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ControlesUsuario\Vigenere.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -33,8 +33,10 @@ namespace PresentacionWindows
         public string encriptar()
         {
             CEncriptador encriptador= new CEncriptador(this.Texto);//dialogo de crecion por implementar
-            fDialogo fdialogo = new fDialogo(CEncriptador.ListaALgortimosDescripcion);//Falta hacerlo modal
+            fDialogo fdialogo = new fDialogo(CEncriptador.ListaALgortimosDescripcion);
+            fdialogo.ShowDialog();//modal
             if (fdialogo.Resultado != DialogResult.OK) return null;//Si no se realiza
+
             encriptador.AlgoritmoActualS = fdialogo.Algoritmo;
             encriptador.ClavesS = fdialogo.Clave;
 

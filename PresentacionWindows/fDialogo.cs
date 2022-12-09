@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PresentacionWindows
 {
-    public partial class fDialogo : Form, IControlAlgoritmo
+    public partial class fDialogo : Form
     {
         private DialogResult resultado;
         private Dictionary<string, string> algoritmos;
@@ -26,10 +26,12 @@ namespace PresentacionWindows
 
         public fDialogo(Dictionary<string,string> algoritmos):this()
         {
-            foreach(string algoritmo in algoritmos.Keys)
+            this.algoritmos= algoritmos;
+            foreach(string algoritmo in this.algoritmos.Keys)
             {
                 this.cbAlgoritmos.Items.Add(algoritmo);
             }
+            this.cbAlgoritmos.SelectedIndex = 0;
         }
 
         public string Algoritmo
@@ -39,12 +41,28 @@ namespace PresentacionWindows
 
         public string[] Clave
         {
-            get { /*return this.controlAlgoritmo.Clave;*/return new string[1] { "3" }; }//prueba
+            get {return this.controlAlgoritmo.Clave;}//prueba
         }
 
-        private void cbAlgoritmos_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbAlgoritmos_SelectedIndexChanged(object sender, EventArgs e)//Cuando se cambia el algoritmo
         {
             this.tbDescripcion.Text = this.algoritmos[this.cbAlgoritmos.Text];
+            this.controlAlgoritmo = ControlUsuarioFactoria.getControlUsuario(this.cbAlgoritmos.Text);
+            this.controlAlgoritmo.Location = new Point(200, 20);
+            this.Controls.Remove(controlAlgoritmo);
+            this.Controls.Add(controlAlgoritmo);
+        }
+
+        private void btAceptar_Click(object sender, EventArgs e)
+        {
+            this.resultado=DialogResult.OK;
+            this.Close();
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            this.resultado = DialogResult.Cancel;
+            this.Close();
         }
     }
 }

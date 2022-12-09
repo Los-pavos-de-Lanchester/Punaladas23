@@ -28,19 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbClave = new System.Windows.Forms.TextBox();
             this.lClave = new System.Windows.Forms.Label();
+            this.mtbClave = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
-            // 
-            // tbClave
-            // 
-            this.tbClave.Location = new System.Drawing.Point(85, 30);
-            this.tbClave.Name = "tbClave";
-            this.tbClave.PasswordChar = '*';
-            this.tbClave.Size = new System.Drawing.Size(100, 20);
-            this.tbClave.TabIndex = 0;
-            this.tbClave.UseSystemPasswordChar = true;
-            this.tbClave.TextChanged += new System.EventHandler(this.tbClave_TextChanged);
             // 
             // lClave
             // 
@@ -51,12 +41,20 @@
             this.lClave.TabIndex = 1;
             this.lClave.Text = "Clave:";
             // 
+            // mtbClave
+            // 
+            this.mtbClave.AsciiOnly = true;
+            this.mtbClave.Location = new System.Drawing.Point(84, 30);
+            this.mtbClave.Name = "mtbClave";
+            this.mtbClave.Size = new System.Drawing.Size(100, 20);
+            this.mtbClave.TabIndex = 2;
+            // 
             // Cesar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.mtbClave);
             this.Controls.Add(this.lClave);
-            this.Controls.Add(this.tbClave);
             this.Name = "Cesar";
             this.Size = new System.Drawing.Size(268, 103);
             this.ResumeLayout(false);
@@ -65,8 +63,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbClave;
         private System.Windows.Forms.Label lClave;
+        private System.Windows.Forms.MaskedTextBox mtbClave;
     }
 }

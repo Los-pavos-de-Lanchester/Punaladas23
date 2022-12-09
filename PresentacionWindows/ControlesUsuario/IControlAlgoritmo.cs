@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace PresentacionWindows.ControlesUsuario
 {
-    internal interface IControlAlgoritmo
+    public abstract class IControlAlgoritmo : UserControl
     {
-        string[] Clave { get; }
+        public virtual string[] Clave { get; }
+        public virtual string[] Args { get; }
     }
 }

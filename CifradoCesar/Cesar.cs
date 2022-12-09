@@ -17,7 +17,6 @@ namespace CifradoCesar
         //Los cuatro siguientes métodos abstraen el algoritmo de la clase Mensaje
         public override Mensaje encriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
         {
-
             return new Mensaje(this.encriptacion(mensaje, this.codificarClave(clave[0])));
         }
         public override Mensaje desEncriptarMensaje(Mensaje mensaje, Mensaje[] clave, Mensaje[] args = null)
