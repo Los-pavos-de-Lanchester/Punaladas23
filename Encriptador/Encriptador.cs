@@ -25,7 +25,7 @@ namespace Encriptador
 
         //Comportamiento del encriptador (algoritmo empleado para el cifrado)
         private Algoritmo algoritmoActual;
-
+        //Propiedades
         internal Mensaje Texto { get { return texto; } set { texto = value; } }
 
         internal Mensaje[] Clave { get { return clave; } set { clave = value; } }
@@ -50,11 +50,17 @@ namespace Encriptador
 
         public string[] ClavesS
         {
-            /*get { return this.clave }*/
+            get 
+            {
+                string[] claves=new string[this.Clave.Length];
+                for(int i = 0, n = this.clave.Length; i < n; i++)claves[i] = this.Clave[i].CadenaS;
+                return claves;
+            }
             set
             {
                 Mensaje[] mensajes=new Mensaje[value.Length];
-                for(int i = 0,n = value.Length;i<n;i++) { mensajes[i] = new Mensaje(value[i]); }
+                for(int i = 0,n = value.Length;i<n;i++)mensajes[i] = new Mensaje(value[i]);
+                this.clave = mensajes;
             }
         }
 

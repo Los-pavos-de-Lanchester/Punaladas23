@@ -58,6 +58,8 @@
             this.tsmVistaSimplificada = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEncriptar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmDesencriptar = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -83,8 +85,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tsmEncriptar = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmDesencriptar = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -339,6 +339,22 @@
             this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.optionsToolStripMenuItem.Text = "&Opciones";
             // 
+            // tsmEncriptar
+            // 
+            this.tsmEncriptar.Enabled = false;
+            this.tsmEncriptar.Name = "tsmEncriptar";
+            this.tsmEncriptar.Size = new System.Drawing.Size(180, 22);
+            this.tsmEncriptar.Text = "Encriptar";
+            this.tsmEncriptar.Click += new System.EventHandler(this.tsmEncriptar_Click);
+            // 
+            // tsmDesencriptar
+            // 
+            this.tsmDesencriptar.Enabled = false;
+            this.tsmDesencriptar.Name = "tsmDesencriptar";
+            this.tsmDesencriptar.Size = new System.Drawing.Size(180, 22);
+            this.tsmDesencriptar.Text = "Desencriptar";
+            this.tsmDesencriptar.Click += new System.EventHandler(this.tsmDesencriptar_Click);
+            // 
             // windowsMenu
             // 
             this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -538,20 +554,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(42, 17);
             this.toolStripStatusLabel.Text = "Estado";
-            // 
-            // tsmEncriptar
-            // 
-            this.tsmEncriptar.Name = "tsmEncriptar";
-            this.tsmEncriptar.Size = new System.Drawing.Size(180, 22);
-            this.tsmEncriptar.Text = "Encriptar";
-            this.tsmEncriptar.Click += new System.EventHandler(this.tsmEncriptar_Click);
-            // 
-            // tsmDesencriptar
-            // 
-            this.tsmDesencriptar.Name = "tsmDesencriptar";
-            this.tsmDesencriptar.Size = new System.Drawing.Size(180, 22);
-            this.tsmDesencriptar.Text = "Desencriptar";
-            this.tsmDesencriptar.Click += new System.EventHandler(this.tsmDesencriptar_Click);
             // 
             // fPrincipal
             // 

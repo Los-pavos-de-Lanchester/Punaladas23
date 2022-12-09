@@ -132,6 +132,9 @@ namespace PresentacionWindows
         //crea contructores
         public fEditor nuevoEditor(string nombre,string texto)
         {
+            this.tsmEncriptar.Enabled = true;
+            this.tsmDesencriptar.Enabled=true;
+
             fEditor fEditor = new fEditor(nombre,texto);
             fEditor.MdiParent= this;
             fEditor.Show();
