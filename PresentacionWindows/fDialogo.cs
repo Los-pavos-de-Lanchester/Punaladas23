@@ -49,7 +49,7 @@ namespace PresentacionWindows
             this.tbDescripcion.Text = this.algoritmos[this.cbAlgoritmos.Text];
             this.controlAlgoritmo = ControlUsuarioFactoria.getControlUsuario(this.cbAlgoritmos.Text);
             this.controlAlgoritmo.Location = new Point(200, 20);
-            this.Controls.Remove(controlAlgoritmo);
+            this.Controls.RemoveAt(this.Controls.Count-1);
             this.Controls.Add(controlAlgoritmo);
         }
 

@@ -30,6 +30,16 @@ namespace PresentacionWindows
             set { this.rtbEditor.Text = value; }
         }
 
+        public void cargarTexto(string path)
+        {
+            this.rtbEditor.LoadFile(path,RichTextBoxStreamType.PlainText);
+        }
+
+        public void guardarTexto(string path)
+        {
+            this.rtbEditor.SaveFile(path, RichTextBoxStreamType.PlainText);
+        }
+
         public string encriptar(bool encriptacion)
         {
             CEncriptador encriptador= new CEncriptador(this.Texto);//dialogo de crecion por implementar

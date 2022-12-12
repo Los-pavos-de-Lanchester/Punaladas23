@@ -33,8 +33,12 @@ namespace PresentacionWindows
             openFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
-                string FileName = openFileDialog.FileName;
+                foreach (string archivo in openFileDialog.FileNames)
+                {
+                    nuevoEditor(openFileDialog.FileName, "").cargarTexto(openFileDialog.FileName);
+                }
             }
+            
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +49,7 @@ namespace PresentacionWindows
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = saveFileDialog.FileName;
+                (this.ActiveMdiChild as fEditor).guardarTexto(FileName);
             }
         }
 
