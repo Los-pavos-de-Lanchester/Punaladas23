@@ -7,12 +7,17 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Security.Cryptography;
+using System.IO;
+using CifradoAES;
+
 namespace Prueba
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            /*
             int p, q, e;
             p = 3;
             q = 5;
@@ -44,6 +49,31 @@ namespace Prueba
             }
 
             Console.ReadLine();
+            */
+
+            /*
+            Aes myAes = Aes.Create();
+            foreach(byte b in myAes.Key)
+            {
+                Console.WriteLine(b);
+            }
+            //Console.WriteLine(myAes.Key);
+            Console.ReadLine();
+            */
+            
+
+            
+            AES aes = new AES("","");
+
+            ModeloDominio.Mensaje encriptado = aes.encriptarMensaje(new ModeloDominio.Mensaje("Hola"), null, null);
+
+            Console.WriteLine(encriptado);
+
+            ModeloDominio.Mensaje desencriptado = aes.desEncriptarMensaje(encriptado, null, null);
+
+            Console.WriteLine(desencriptado);
+            Console.ReadLine();
+            
         }
     }
 }

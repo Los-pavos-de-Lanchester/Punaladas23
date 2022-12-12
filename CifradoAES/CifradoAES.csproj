@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EC9DEEEB-85B3-4175-815A-DC9C1E49B676}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Prueba</RootNamespace>
-    <AssemblyName>Prueba</AssemblyName>
+    <ProjectGuid>{A04D6231-7241-4ECF-8FBF-58944B40B496}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CifradoAES</RootNamespace>
+    <AssemblyName>CifradoAES</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,48 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="AES.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Algoritmo\AlgoritmoEncriptacion.csproj">
       <Project>{a4da49ab-0694-43af-9ee6-4cd3b6b098d6}</Project>
       <Name>AlgoritmoEncriptacion</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CifradoAES\CifradoAES.csproj">
-      <Project>{a04d6231-7241-4ecf-8fbf-58944b40b496}</Project>
-      <Name>CifradoAES</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CifradoCesar\CifradoCesar.csproj">
-      <Project>{1a6c1bb3-c038-47a3-94fd-2d7a0df5a0c2}</Project>
-      <Name>CifradoCesar</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CifradoRSA\CifradoRSA.csproj">
-      <Project>{e0dcc3df-c953-49fe-b8e4-dd82bba205f3}</Project>
-      <Name>CifradoRSA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CifradoVigenere\CifradoVigenere.csproj">
-      <Project>{3c176d21-1f62-49d3-9fc1-c64b2fe5e99b}</Project>
-      <Name>CifradoVigenere</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ColeccionEncriptacion\ColeccionEncriptacion.csproj">
-      <Project>{c99cb087-0cba-40b8-aa56-21c772f04c26}</Project>
-      <Name>ColeccionEncriptacion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Encriptador\Encriptador.csproj">
-      <Project>{3925ffae-a966-4c58-a78a-7999234386bc}</Project>
-      <Name>Encriptador</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mensaje\ModeloDominio.csproj">
       <Project>{c8893141-a4e5-48a6-b89e-d5d6a1887edd}</Project>
       <Name>ModeloDominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PresentacionWindows\PresentacionWindows.csproj">
-      <Project>{4b2e5f1b-b768-4686-a0fa-c80370af6d76}</Project>
-      <Name>PresentacionWindows</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
