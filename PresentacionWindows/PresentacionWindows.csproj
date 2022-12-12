@@ -50,6 +50,12 @@
     <Compile Include="ControlesUsuario\IControlAlgoritmo.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ControlesUsuario\Rsa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUsuario\Rsa.Designer.cs">
+      <DependentUpon>Rsa.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesUsuario\Vigenere.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </Compile>
     <EmbeddedResource Include="ControlesUsuario\Cesar.resx">
       <DependentUpon>Cesar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlesUsuario\Rsa.resx">
+      <DependentUpon>Rsa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ControlesUsuario\Vigenere.resx">
       <DependentUpon>Vigenere.cs</DependentUpon>

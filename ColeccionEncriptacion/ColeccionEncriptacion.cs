@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using AlgoritmoEncriptacion;
 using CifradoCesar;
 using CifradoVigenere;
+using CifradoRSA;
 
 namespace ColeccionEncriptacion
 {
@@ -19,6 +20,7 @@ namespace ColeccionEncriptacion
         {
             this.Add(new Cesar("Cesar", "El cifrado César, también conocido como cifrado por desplazamiento, código de César o desplazamiento de César, es una de las técnicas de cifrado más simples y más usadas. Es un tipo de cifrado por sustitución en el que una letra en el texto original es reemplazada por otra letra que se encuentra un número fijo de posiciones más adelante en el alfabeto. Por ejemplo, con un desplazamiento de 3, la A sería sustituida por la D (situada 3 lugares a la derecha de la A), la B sería reemplazada por la E, etc. Este método debe su nombre a Julio César, que lo usaba para comunicarse con sus generales."));
             this.Add(new Vigenere("Vigenere", "El cifrado Vigenère es un cifrado basado en diferentes series de caracteres o letras del cifrado César formando estos caracteres una tabla, llamada tabla de Vigenère, que se usa como clave. El cifrado de Vigenère es un cifrado por sustitución simple polialfabético."));
+            this.Add(new Rsa("RSA","Cifrado RSA"))
         }
         protected override string GetKeyForItem(Algoritmo item)
         {

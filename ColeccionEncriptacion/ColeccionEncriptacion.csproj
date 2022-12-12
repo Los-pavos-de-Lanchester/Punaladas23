@@ -53,6 +53,10 @@
       <Project>{1a6c1bb3-c038-47a3-94fd-2d7a0df5a0c2}</Project>
       <Name>CifradoCesar</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CifradoRSA\CifradoRSA.csproj">
+      <Project>{e0dcc3df-c953-49fe-b8e4-dd82bba205f3}</Project>
+      <Name>CifradoRSA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CifradoVigenere\CifradoVigenere.csproj">
       <Project>{3c176d21-1f62-49d3-9fc1-c64b2fe5e99b}</Project>
       <Name>CifradoVigenere</Name>
