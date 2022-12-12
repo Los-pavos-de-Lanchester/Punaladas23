@@ -30,7 +30,7 @@ namespace PresentacionWindows
             set { this.rtbEditor.Text = value; }
         }
 
-        public string encriptar()
+        public string encriptar(bool encriptacion)
         {
             CEncriptador encriptador= new CEncriptador(this.Texto);//dialogo de crecion por implementar
             fDialogo fdialogo = new fDialogo(CEncriptador.ListaALgortimosDescripcion);
@@ -39,8 +39,8 @@ namespace PresentacionWindows
 
             encriptador.AlgoritmoActualS = fdialogo.Algoritmo;
             encriptador.ClavesS = fdialogo.Clave;
-
-            return encriptador.cifrarString();
+            if(encriptacion) return encriptador.cifrarString();
+            return  encriptador.desCifrarString();
         }
     }
 

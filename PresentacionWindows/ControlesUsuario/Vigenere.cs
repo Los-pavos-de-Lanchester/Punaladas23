@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PresentacionWindows.ControlesUsuario
 {
-    public partial class Vigenere : IControlAlgoritmo
+    public sealed partial class Vigenere : IControlAlgoritmo
     {
         public Vigenere()
         {

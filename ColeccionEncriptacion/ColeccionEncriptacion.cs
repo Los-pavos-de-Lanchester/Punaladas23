@@ -12,7 +12,7 @@ using CifradoVigenere;
 
 namespace ColeccionEncriptacion
 {
-    public class ColeccionAlgoritmos : KeyedCollection<string, Algoritmo>
+    public sealed class ColeccionAlgoritmos : KeyedCollection<string, Algoritmo>
     {
         private static ColeccionAlgoritmos algoritmos;
         private ColeccionAlgoritmos()

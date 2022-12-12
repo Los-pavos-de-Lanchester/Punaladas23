@@ -78,10 +78,6 @@
       <Project>{c8893141-a4e5-48a6-b89e-d5d6a1887edd}</Project>
       <Name>ModeloDominio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
-      <Project>{94415f38-5087-4db3-a9e7-4c640f4ed8ea}</Project>
-      <Name>Persistencia</Name>
-    </ProjectReference>
     <ProjectReference Include="..\PresentacionWindows\PresentacionWindows.csproj">
       <Project>{4b2e5f1b-b768-4686-a0fa-c80370af6d76}</Project>
       <Name>PresentacionWindows</Name>

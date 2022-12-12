@@ -10,7 +10,6 @@ namespace CifradoRSA
 {
     public sealed class Rsa : Algoritmo
     {
-
         public Rsa(string nombre, string descripcion) : base(nombre, descripcion) { }
 
         //Los cuatro siguientes métodos abstraen el algoritmo de la clase Mensaje

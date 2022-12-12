@@ -17,8 +17,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CifradoVigenere", "CifradoV
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algoritmos", "Algoritmos", "{F196C74D-9A5F-4442-8B9E-30EE39683C96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Persistencia", "Persistencia\Persistencia.csproj", "{94415F38-5087-4DB3-A9E7-4C640F4ED8EA}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CapaPresentacion", "CapaPresentacion", "{1A634623-D4A1-4D55-88AD-C0C248D17354}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColeccionEncriptacion", "ColeccionEncriptacion\ColeccionEncriptacion.csproj", "{C99CB087-0CBA-40B8-AA56-21C772F04C26}"
@@ -57,10 +55,6 @@ Global
 		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C176D21-1F62-49D3-9FC1-C64B2FE5E99B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{94415F38-5087-4DB3-A9E7-4C640F4ED8EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{94415F38-5087-4DB3-A9E7-4C640F4ED8EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{94415F38-5087-4DB3-A9E7-4C640F4ED8EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{94415F38-5087-4DB3-A9E7-4C640F4ED8EA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C99CB087-0CBA-40B8-AA56-21C772F04C26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C99CB087-0CBA-40B8-AA56-21C772F04C26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C99CB087-0CBA-40B8-AA56-21C772F04C26}.Release|Any CPU.ActiveCfg = Release|Any CPU

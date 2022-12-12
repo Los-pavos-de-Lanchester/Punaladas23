@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PresentacionWindows
 {
-    public partial class Cesar : IControlAlgoritmo
+    public sealed partial class Cesar : IControlAlgoritmo
     {
         public Cesar()
         {

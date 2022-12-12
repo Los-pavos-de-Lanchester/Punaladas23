@@ -104,7 +104,7 @@
             this.Controls.Add(this.btAceptar);
             this.Controls.Add(this.btCancelar);
             this.Name = "fDialogo";
-            this.Text = "Dialogo encriptacion";
+            this.Text = "Dialogo cifrado";
             this.ResumeLayout(false);
             this.PerformLayout();
 
